@@ -15,8 +15,13 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Projekt Fleorune.VM"
+config/name="Life-of-Fleorune"
 config/icon="res://icon.png"
+
+[display]
+
+window/size/width=1920
+window/size/height=1080
 
 [rendering]
 
