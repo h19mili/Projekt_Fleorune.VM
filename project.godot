@@ -8,14 +8,26 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Node2D",
+"class": "Battler",
+"language": "GDScript",
+"path": "res://Battler.gd"
+}, {
+"base": "YSort",
+"class": "TurnQ",
+"language": "GDScript",
+"path": "res://TurnQ.gd"
+} ]
 _global_script_class_icons={
-
+"Battler": "",
+"TurnQ": ""
 }
 
 [application]
 
 config/name="Projekt Fleorune.VM"
+run/main_scene="res://Main.tscn"
 config/icon="res://icon.png"
 
 [rendering]
