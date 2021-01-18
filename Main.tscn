@@ -13,9 +13,7 @@ script = ExtResource( 1 )
 Speed = 2
 
 [node name="Battler2" parent="TurnQ" instance=ExtResource( 2 )]
-position = Vector2( -112, 0 )
 Speed = 3
 
 [node name="Position2D" type="Position2D" parent="."]
-[connection signal="completed" from="TurnQ" to="TurnQ/Battler2" method="_on_TurnQ_completed"]
-[connection signal="completed" from="TurnQ" to="TurnQ/Battler" method="_on_TurnQ_completed"]
+[connection signal="completed" from="TurnQ/Battler" to="TurnQ" method="_Done"]
