@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Fallout.wav-d7304b32d6603b66eea6b1e664bb3d1c.sample"
+
+[deps]
+
+source_file="res://Assets/Music/Menu/Fallout.wav"
+dest_files=[ "res://.import/Fallout.wav-d7304b32d6603b66eea6b1e664bb3d1c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

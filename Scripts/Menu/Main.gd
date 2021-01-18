@@ -9,10 +9,12 @@ func _ready():
 
 
 func Singleplayer():
+	get_tree().change_scene("res://Scenes/Menu/Singleplayer.tscn")
 	pass
 
 
 func Options():
+	get_tree().change_scene("res://Scenes/Menu/Options.tscn")
 	pass
 
 
