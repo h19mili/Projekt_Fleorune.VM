@@ -14,6 +14,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Battler.gd"
 }, {
+"base": "Node",
+"class": "Job",
+"language": "GDScript",
+"path": "res://Job.gd"
+}, {
+"base": "Resource",
+"class": "Statblock",
+"language": "GDScript",
+"path": "res://Jobs/Statblock.gd"
+}, {
 "base": "YSort",
 "class": "TurnQ",
 "language": "GDScript",
@@ -21,6 +31,8 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "Battler": "",
+"Job": "",
+"Statblock": "",
 "TurnQ": ""
 }
 

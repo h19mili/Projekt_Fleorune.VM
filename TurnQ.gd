@@ -2,12 +2,9 @@ extends YSort
 
 class_name TurnQ
 signal completed
-#export (PackedScene) var BSpawner
-#var Bnumber = 0
 onready var active_player = Battler
 
 func _ready():
-	#_BSpawner()
 	initialize()
 	pass
 
@@ -44,4 +41,4 @@ func get_players():
 
 func _Done():
 	emit_signal("completed")
-	pass # Replace with function body.
+	pass 
