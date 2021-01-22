@@ -9,6 +9,8 @@ var play_Effects = 1
 var new_choice = 1
 var song
 var menu = true
+var paused = false
+var pause_menu = false
 
 # Saved
 
@@ -23,8 +25,6 @@ var res_height = 1080
 var fullscreen = false
 var sp_use = 32
 var sp_pause = 16777217
-
-
 
 func _ready():
 	load_game()
@@ -43,11 +43,16 @@ func _process(delta):
 	else:
 		play_Music = 1
 	
+	if(Master_Mute == true or Music_Mute == true):
+		play_Music = 1
+	
 	if(Master_Volume > 0 and Effects_Volume > 0):
 		play_Effects = int((Master_Volume / 2000) * (Effects_Volume / 2000) * 2000)
 	else:
 		play_Effects = 1
 	
+	if(Master_Mute == true or Effects_Mute == true):
+		play_Effects = 1
 	
 	$music.set_max_distance(play_Music)
 	
@@ -59,8 +64,7 @@ func choose_music():
 		menu_music()
 	else:
 		game_music()
-		
-pass
+	pass
 
 
 func menu_music():
@@ -179,9 +183,4 @@ func load_game():
 	sp_use = data['sp_use']
 	sp_pause = data['sp_pause']
 	
-	
 	pass
-
-
-
-

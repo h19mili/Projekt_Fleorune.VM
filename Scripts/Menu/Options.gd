@@ -6,6 +6,8 @@ var select_timer = 5
 var sp_pause = false
 var sp_use = false
 
+var ready = true
+var ready_timer = 5
 
 func _ready():
 	$Options_video.connect("pressed", self, "Video")
@@ -49,7 +51,28 @@ func _ready():
 	$Options_cntrl_Audio/sldr_Effects.set_value(Options.Effects_Volume)
 	
 	
+	$Options_label.set_size(Vector2(1920,340))
+	$Options_cntrl_Video.set_size(Vector2(1920,702))
+	$Options_cntrl_Video.set_position(Vector2(0,378))
+	$Options_cntrl_Audio.set_size(Vector2(1920,702))
+	$Options_cntrl_Audio.set_position(Vector2(0,378))
+	$Options_cntrl_Controls.set_size(Vector2(1920,702))
+	$Options_cntrl_Controls.set_position(Vector2(0,378))
 	
+	if(Options.Master_Mute == true):
+		$Options_cntrl_Audio/sldr_Master.set_modulate(Color(1,1,1,0.1))
+	elif(Options.Master_Mute == false):
+		$Options_cntrl_Audio/sldr_Master.set_modulate(Color(1,1,1,1))
+	
+	if(Options.Music_Mute == true):
+		$Options_cntrl_Audio/sldr_Music.set_modulate(Color(1,1,1,0.1))
+	elif(Options.Music_Mute == false):
+		$Options_cntrl_Audio/sldr_Music.set_modulate(Color(1,1,1,1))
+	
+	if(Options.Effects_Mute == true):
+		$Options_cntrl_Audio/sldr_Effects.set_modulate(Color(1,1,1,0.1))
+	elif(Options.Effects_Mute == false):
+		$Options_cntrl_Audio/sldr_Effects.set_modulate(Color(1,1,1,1))
 	
 	pass
 
@@ -62,11 +85,16 @@ func _process(delta):
 	else:
 		can_select
 	
+	if(ready_timer > 0):
+		ready_timer -= 1
+		ready = true
+	else:
+		ready = false
+	
+	
 	if($Options_cntrl_Controls.is_visible()):
 		$Options_cntrl_Controls/lbl_use.set_text(OS.get_scancode_string(Options.sp_use))
 		$Options_cntrl_Controls/lbl_pause.set_text(OS.get_scancode_string(Options.sp_pause))
-	
-	
 	
 	pass
 
@@ -113,7 +141,10 @@ func Controls():
 
 
 func Back():
-	get_tree().change_scene("res://Scenes/Menu/Main.tscn")
+	if(Options.paused == false):
+		get_tree().change_scene("res://Scenes/Menu/Main.tscn")
+	elif(Options.paused == true):
+		Options.pause_menu = true
 	pass
 
 
@@ -153,48 +184,68 @@ func Fullscreen(item):
 
 
 func Mute_Master():
-	if(Options.Master_Mute == false):
-		Options.Master_Mute = true
-	if(Options.Master_Mute == true):
-		Options.Master_Mute = false
+	if(ready == false):
+		if(Options.Master_Mute == false):
+			Options.Master_Mute = true
+			$Options_cntrl_Audio/sldr_Master.set_modulate(Color(1,1,1,0.1))
+		if(Options.Master_Mute == true):
+			Options.Master_Mute = false
+			$Options_cntrl_Audio/sldr_Master.set_modulate(Color(1,1,1,1))
 	Options.choose_music()
 	Options.save_game()
 	pass
 
 
 func Master_Volume(value):
+	if(ready == false):
+		if(Options.Master_Mute == true):
+			Options.Master_Mute = false
+			$Options_cntrl_Audio/sldr_Master.set_modulate(Color(1,1,1,1))
 	Options.Master_Volume = $Options_cntrl_Audio/sldr_Master.get_value()
 	Options.save_game()
 	pass
 
 
 func Mute_Music():
-	if(Options.Music_Mute == false):
-		Options.Music_Mute = true
-	if(Options.Music_Mute == true):
-		Options.Music_Mute = false
+	if(ready == false):
+		if(Options.Music_Mute == false):
+			Options.Music_Mute = true
+			$Options_cntrl_Audio/sldr_Music.set_modulate(Color(1,1,1,0.1))
+		if(Options.Music_Mute == true):
+			Options.Music_Mute = false
+			$Options_cntrl_Audio/sldr_Music.set_modulate(Color(1,1,1,1))
 	Options.choose_music()
 	Options.save_game()
 	pass
 
 
 func Music_Volume(value):
+	if(ready == false):
+		if(Options.Music_Mute == true):
+			Options.Music_Mute = false
+			$Options_cntrl_Audio/sldr_Music.set_modulate(Color(1,1,1,1))
 	Options.Music_Volume = $Options_cntrl_Audio/sldr_Music.get_value()
 	Options.save_game()
 	pass
 
 
 func Mute_Effects():
-	if(Options.Effects_Mute == false):
-		Options.Effects_Mute = true
-	if(Options.Effects_Mute == true):
-		Options.Effects_Mute = false
-	Options.choose_music()
+	if(ready == false):
+		if(Options.Effects_Mute == false):
+			Options.Effects_Mute = true
+			$Options_cntrl_Audio/sldr_Effects.set_modulate(Color(1,1,1,0.1))
+		if(Options.Effects_Mute == true):
+			Options.Effects_Mute = false
+			$Options_cntrl_Audio/sldr_Effects.set_modulate(Color(1,1,1,1))
 	Options.save_game()
 	pass
 
 
 func Effects_Volume(value):
+	if(ready == false):
+		if(Options.Effects_Mute == true):
+			Options.Effects_Mute = false
+			$Options_cntrl_Audio/sldr_Effects.set_modulate(Color(1,1,1,1))
 	Options.Effects_Volume = $Options_cntrl_Audio/sldr_Effects.get_value()
 	Options.save_game()
 	pass
@@ -214,5 +265,3 @@ func Pause_Button():
 		$Options_cntrl_Controls/Key.show()
 		
 	pass
-
-
