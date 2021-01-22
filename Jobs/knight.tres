@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Jobs/Statblock.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+Job_name = "Job"
+Max_HP = 50
+Current_HP = 50
+Max_Mana = 25
+Speed = 6
+STR = 10
+DEF = 14
