@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Battler.gd" type="Script" id=1]
 [ext_resource path="res://Job.gd" type="Script" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Art/bar(2).png" type="Texture" id=6]
 [ext_resource path="res://Art/bar(1).png" type="Texture" id=7]
 [ext_resource path="res://Player karaktär/Healthbar.gd" type="Script" id=8]
+[ext_resource path="res://Player karaktär/Mana_bar.gd" type="Script" id=9]
 
 [node name="David" type="Node2D"]
 script = ExtResource( 1 )
@@ -31,6 +32,20 @@ value = 10.0
 texture_under = ExtResource( 6 )
 texture_progress = ExtResource( 7 )
 script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Mana_bar" type="TextureProgress" parent="."]
+margin_left = -30.0
+margin_top = 25.0
+margin_right = 34.0
+margin_bottom = 89.0
+value = 10.0
+texture_under = ExtResource( 6 )
+texture_progress = ExtResource( 7 )
+tint_progress = Color( 0, 0.862745, 0.133333, 0.603922 )
+script = ExtResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

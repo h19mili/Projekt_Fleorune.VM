@@ -16,7 +16,7 @@ func _Healthbar():
  
 
 func _process(delta):
+	_Healthbar()
 	if Input.is_action_just_pressed("ui_accept"):
 		Current_HP -= 1
-		_Healthbar()
 		print(Current_HP)

@@ -15,7 +15,6 @@ func _ready():
 	pass 
 
 func _process(delta):
-	
 	pass
 
 func init(Max_HP, Current_HP):
