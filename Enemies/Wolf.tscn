@@ -9,7 +9,7 @@
 [ext_resource path="res://Player karaktär/Healthbar.gd" type="Script" id=8]
 
 [node name="Wolf" type="Node2D"]
-position = Vector2( -1.88782, -3.77551 )
+position = Vector2( 216.992, 190.41 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
