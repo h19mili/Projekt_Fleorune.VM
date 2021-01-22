@@ -11,9 +11,11 @@ var STR : int
 var DEF : int
 
 func _ready():
+	init(Max_HP, Current_HP)
 	pass 
 
 func _process(delta):
+	
 	pass
 
 func init(Max_HP, Current_HP):
