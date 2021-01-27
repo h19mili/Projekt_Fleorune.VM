@@ -39,7 +39,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Projekt Fleorune.VM"
-run/main_scene="res://Battler.tscn"
+run/main_scene="res://Jobs/Game.tscn"
 config/icon="res://icon.png"
 
 [input]
