@@ -15,7 +15,9 @@ func _ready():
 	pass 
 
 func _process(delta):
-	pass
+	if Input.is_action_just_pressed("ui_accept"):
+		emit_signal("completed")
+		pass
 
 func init(Max_HP, Current_HP):
 	self.Current_HP = Max_HP * 1.0
@@ -37,3 +39,5 @@ func character(stats : Statblock):
 	DEF = stats.DEF
 	Speed = stats.Speed
 	Current_HP = Max_HP
+
+
