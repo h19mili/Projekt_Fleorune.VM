@@ -112,7 +112,6 @@ __meta__ = {
 }
 
 [node name="Options_cntrl_Audio" type="Control" parent="."]
-visible = false
 anchor_top = 0.35
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -120,7 +119,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="bnt_Master_Mute" type="Button" parent="Options_cntrl_Audio"]
+[node name="btn_Master_Mute" type="Button" parent="Options_cntrl_Audio"]
 anchor_left = 0.000695229
 anchor_right = 0.000695229
 margin_left = 150.0
@@ -142,7 +141,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="bnt_Music_Mute" type="Button" parent="Options_cntrl_Audio"]
+[node name="btn_Music_Mute" type="Button" parent="Options_cntrl_Audio"]
 margin_left = 148.665
 margin_top = 150.0
 margin_right = 448.665
@@ -159,12 +158,15 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="bnt_Effects_Mute" type="Button" parent="Options_cntrl_Audio"]
+[node name="btn_Effects_Mute" type="Button" parent="Options_cntrl_Audio"]
 margin_left = 150.0
 margin_top = 250.0
 margin_right = 450.0
 margin_bottom = 280.0
 text = "Mute Effects Volume"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="sldr_Effects" type="HSlider" parent="Options_cntrl_Audio"]
 margin_left = 500.0
@@ -172,6 +174,9 @@ margin_top = 250.0
 margin_right = 800.0
 margin_bottom = 280.0
 max_value = 2000.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Options_cntrl_Controls" type="Control" parent="."]
 visible = false

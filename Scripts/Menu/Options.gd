@@ -16,11 +16,11 @@ func _ready():
 	$Options_back.connect("pressed", self, "Back")
 	$Options_cntrl_Video/btn_Resolution.connect("item_selected", self, "Resolution")
 	$Options_cntrl_Video/btn_Fullscreen.connect("item_selected", self, "Fullscreen")
-	$Options_cntrl_Audio/bnt_Master_Mute.connect("pressed", self, "Mute_Master")
+	$Options_cntrl_Audio/btn_Master_Mute.connect("pressed", self, "Mute_Master")
 	$Options_cntrl_Audio/sldr_Master.connect("value_changed", self, "Master_Volume")
-	$Options_cntrl_Audio/bnt_Music_Mute.connect("pressed", self, "Mute_Music")
+	$Options_cntrl_Audio/btn_Music_Mute.connect("pressed", self, "Mute_Music")
 	$Options_cntrl_Audio/sldr_Music.connect("value_changed", self, "Music_Volume")
-	$Options_cntrl_Audio/bnt_Effects_Mute.connect("pressed", self, "Mute_Effects")
+	$Options_cntrl_Audio/btn_Effects_Mute.connect("pressed", self, "Mute_Effects")
 	$Options_cntrl_Audio/sldr_Effects.connect("value_changed", self, "Effects_Volume")
 	$Options_cntrl_Controls/btn_use.connect("pressed", self, "Use_Button")
 	$Options_cntrl_Controls/btn_pause.connect("pressed", self, "Pause_Button")
@@ -95,7 +95,6 @@ func _process(delta):
 	if($Options_cntrl_Controls.is_visible()):
 		$Options_cntrl_Controls/lbl_use.set_text(OS.get_scancode_string(Options.sp_use))
 		$Options_cntrl_Controls/lbl_pause.set_text(OS.get_scancode_string(Options.sp_pause))
-	
 	pass
 
 
@@ -188,7 +187,7 @@ func Mute_Master():
 		if(Options.Master_Mute == false):
 			Options.Master_Mute = true
 			$Options_cntrl_Audio/sldr_Master.set_modulate(Color(1,1,1,0.1))
-		if(Options.Master_Mute == true):
+		elif(Options.Master_Mute == true):
 			Options.Master_Mute = false
 			$Options_cntrl_Audio/sldr_Master.set_modulate(Color(1,1,1,1))
 	Options.choose_music()
@@ -211,7 +210,7 @@ func Mute_Music():
 		if(Options.Music_Mute == false):
 			Options.Music_Mute = true
 			$Options_cntrl_Audio/sldr_Music.set_modulate(Color(1,1,1,0.1))
-		if(Options.Music_Mute == true):
+		elif(Options.Music_Mute == true):
 			Options.Music_Mute = false
 			$Options_cntrl_Audio/sldr_Music.set_modulate(Color(1,1,1,1))
 	Options.choose_music()
@@ -234,7 +233,7 @@ func Mute_Effects():
 		if(Options.Effects_Mute == false):
 			Options.Effects_Mute = true
 			$Options_cntrl_Audio/sldr_Effects.set_modulate(Color(1,1,1,0.1))
-		if(Options.Effects_Mute == true):
+		elif(Options.Effects_Mute == true):
 			Options.Effects_Mute = false
 			$Options_cntrl_Audio/sldr_Effects.set_modulate(Color(1,1,1,1))
 	Options.save_game()
