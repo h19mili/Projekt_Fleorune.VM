@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/Character/Player.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Graphical/icon.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Graphical/Map/Overworld_map.webp" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 10.3843, 10.5613 )
+
+[node name="Overworld" type="Node"]
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 3 )
+
+[node name="Player" type="KinematicBody2D" parent="."]
+position = Vector2( 173.054, -335.621 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Player"]
+position = Vector2( -1.71661e-05, 1.90735e-06 )
+scale = Vector2( 0.345746, 0.345746 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource( 1 )
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+current = true
+zoom = Vector2( 0.5, 0.5 )

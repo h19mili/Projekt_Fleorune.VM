@@ -15,7 +15,6 @@ func _ready():
 	pass 
 
 func _process(delta):
-	
 	pass
 
 func init(Max_HP, Current_HP):
@@ -38,4 +37,3 @@ func character(stats : Statblock):
 	DEF = stats.DEF
 	Speed = stats.Speed
 	Current_HP = Max_HP
-	print("hej")

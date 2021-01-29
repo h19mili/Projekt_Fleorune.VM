@@ -9,7 +9,6 @@
 [ext_resource path="res://Player karaktär/Healthbar.gd" type="Script" id=8]
 
 [node name="Bandit" type="Node2D"]
-position = Vector2( 725.231, 304.288 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Wolf.webp-a2298d1c125ef5a6149f049bac797daa.stex"
+path="res://.import/bar(2).png-4c3da35a8507fa5dd7b421b20d459eb1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Wolf.webp"
-dest_files=[ "res://.import/Wolf.webp-a2298d1c125ef5a6149f049bac797daa.stex" ]
+source_file="res://Assets/Graphical/bar(2).png"
+dest_files=[ "res://.import/bar(2).png-4c3da35a8507fa5dd7b421b20d459eb1.stex" ]
 
 [params]
 

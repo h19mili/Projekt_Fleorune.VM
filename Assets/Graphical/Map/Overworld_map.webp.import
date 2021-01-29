@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Bandit.png-465b27419c60a8cb1e31fdf47ba7d9e0.stex"
+path="res://.import/Overworld_map.webp-6d8db7cc386af10f16ca388c6275dc56.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Bandit.png"
-dest_files=[ "res://.import/Bandit.png-465b27419c60a8cb1e31fdf47ba7d9e0.stex" ]
+source_file="res://Assets/Graphical/Map/Overworld_map.webp"
+dest_files=[ "res://.import/Overworld_map.webp-6d8db7cc386af10f16ca388c6275dc56.stex" ]
 
 [params]
 

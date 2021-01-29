@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bar(1).png-a517df7f552861eb7c12bf67ebc0d97c.stex"
+path="res://.import/Bandit.png-592a79b41cbb4d0964df4c141181d25d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/bar(1).png"
-dest_files=[ "res://.import/bar(1).png-a517df7f552861eb7c12bf67ebc0d97c.stex" ]
+source_file="res://Assets/Graphical/Bandit.png"
+dest_files=[ "res://.import/Bandit.png-592a79b41cbb4d0964df4c141181d25d.stex" ]
 
 [params]
 

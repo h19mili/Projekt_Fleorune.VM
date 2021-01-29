@@ -1,7 +1,6 @@
 extends TextureProgress
 
-onready var Max_HP = get_node("..").Max_HP
-onready var Current_HP = get_node("..").Current_HP
+onready var Parent = get_node("..")
 
 
 func _ready():
@@ -10,13 +9,13 @@ func _ready():
 
 
 func _Healthbar():
-	self.max_value = Max_HP
-	self.value = Current_HP
+	self.max_value = Parent.Max_HP
+	self.value = Parent.Current_HP
 	pass
  
 
 func _process(delta):
 	if Input.is_action_just_pressed("ui_accept"):
-		Current_HP -= 1
+		Parent.Current_HP -= 1
 		_Healthbar()
-		print(Current_HP)
+		print(Parent.Current_HP)
