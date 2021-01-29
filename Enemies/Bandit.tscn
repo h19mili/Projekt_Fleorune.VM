@@ -9,16 +9,17 @@
 [ext_resource path="res://Player karaktär/Healthbar.gd" type="Script" id=8]
 
 [node name="Bandit" type="Node2D"]
-position = Vector2( 197.674, 158.368 )
+position = Vector2( 725.231, 304.288 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="Skin" type="Sprite" parent="."]
-position = Vector2( 16.837, -46.2753 )
+position = Vector2( -15.7051, -47.069 )
 scale = Vector2( 0.137014, 0.148341 )
 texture = ExtResource( 4 )
+flip_h = true
 
 [node name="Job" type="Node" parent="."]
 script = ExtResource( 2 )

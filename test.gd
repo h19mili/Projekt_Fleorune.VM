@@ -20,7 +20,3 @@ func _physics_process(delta):
 	get_input()
 	velocity = move_and_slide(velocity)
 
-
-
-func _on_Enemy_body_entered(body):
-	pass # Replace with function body.

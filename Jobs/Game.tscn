@@ -9,15 +9,15 @@
 extents = Vector2( 30.8061, 31.7862 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 30.5648, 31.6071 )
+extents = Vector2( 20.5468, 31.4545 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 20.5468, 31.4545 )
+extents = Vector2( 20.1534, 31.6071 )
 
 [node name="Game" type="Node"]
 
 [node name="Player" type="KinematicBody2D" parent="."]
-position = Vector2( 225.888, 236.304 )
+position = Vector2( 215.78, 219.655 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
@@ -30,12 +30,6 @@ texture = ExtResource( 1 )
 position = Vector2( 0.00190735, 0.00404358 )
 shape = SubResource( 1 )
 
-[node name="Area2D" type="Area2D" parent="Player"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Area2D"]
-position = Vector2( 0.000198364, 0.000198364 )
-shape = SubResource( 3 )
-
 [node name="Enemy" type="Area2D" parent="."]
 script = ExtResource( 4 )
 
@@ -46,6 +40,12 @@ texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy"]
 position = Vector2( 485.452, 248.719 )
-scale = Vector2( 1, 1 )
+shape = SubResource( 3 )
+
+[node name="Area2D" type="Area2D" parent="Enemy"]
+position = Vector2( 485.573, 248.747 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy/Area2D"]
+position = Vector2( 0.0775452, 0.0397034 )
 shape = SubResource( 2 )
-[connection signal="body_entered" from="Player/Area2D" to="Enemy" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Enemy/Area2D" to="Enemy" method="_on_Area2D_body_entered"]
