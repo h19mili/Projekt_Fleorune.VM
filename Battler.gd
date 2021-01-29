@@ -2,6 +2,7 @@ extends Node2D
 
 class_name Battler
 signal completed
+export var Party_member = false
 
 var Max_HP : int
 var Current_HP : int 

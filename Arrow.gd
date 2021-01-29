@@ -13,14 +13,16 @@ func _ready():
 
 
 func _select_target(Battlers : Array) -> Battler:
+	print("hofisrt")
 	targets = Battlers
 	active_target = targets[0]
 	rect_scale.x = 1.0
 	rect_global_position = active_target.target_global_position
 	grab_focus()
+	print("hi3")
 	var seleceted_target : Battler = yield(self, "target_selected")
 	return seleceted_target
-	pass
+
 
 func _Move_to(Battler : Battler):
 	tween.interpolate_property(
@@ -43,6 +45,7 @@ func _gui_input(event):
 		get_tree().set_input_as_handled()
 	elif event.is_action_pressed("ui_cancel"):
 		emit_signal("target_selected", null)
+		print("cancel")
 		get_tree().set_input_as_handled()
 		
 	var index = targets.find(active_target)
@@ -51,5 +54,6 @@ func _gui_input(event):
 		_Move_to(active_target)
 		get_tree().set_input_as_handled()
 	if event.is_action_pressed("ui_up"):
-		active_target = targets[(index + 1) % targets.size()]
+		active_target = targets[(index - 1 + targets.size()) % targets.size()]
 		_Move_to(active_target)
+		get_tree().set_input_as_handled()

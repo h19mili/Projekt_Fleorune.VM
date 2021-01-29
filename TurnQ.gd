@@ -2,7 +2,9 @@ extends YSort
 
 class_name TurnQ
 signal completed
+var party : Array = []
 onready var active_player = Battler
+onready var select_arrow = "../Arrow"
 
 func _ready():
 	initialize()
@@ -26,8 +28,12 @@ func play_turn():
 	active_player = get_child(new_index)
 	yield(active_player, "completed")
 	print("again")
-	_next_battler()
 	play_turn()
+
+func _select_target(selectable_battler : Array) -> Battler:
+	var selected_target : Battler = yield(select_arrow-_select_target(selectable_battler), "completed")
+	print("hilast")
+	return selected_target
 
 static func sort_players(a : Battler, b : Battler) -> bool:
 	return a.Speed > b.Speed
@@ -42,3 +48,6 @@ func get_players():
 func _Done():
 	emit_signal("completed")
 	pass 
+
+
+
