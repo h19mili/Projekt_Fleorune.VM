@@ -71,19 +71,11 @@ func menu_music():
 	
 	randomize()
 	
-	new_choice = int(rand_range(1,5))
+	new_choice = int(rand_range(1,1))
 	
 	match new_choice:
 		1:
-			song = load("res://Assets/Music/Menu/Essence.wav")
-		2:
-			song = load("res://Assets/Music/Menu/Fallout.wav")
-		3:
-			song = load("res://Assets/Music/Menu/Horizons.wav")
-		4:
-			song = load("res://Assets/Music/Menu/Pulsefire.wav")
-		5:
-			song = load("res://Assets/Music/Menu/Skyrim.wav")
+			song = load("res://Assets/Music/Menu/BGM_01.ogg")
 	
 	$music.set_stream(song)
 	$music.play(0.0)
