@@ -42,6 +42,10 @@ config/name="Projekt Fleorune.VM"
 run/main_scene="res://Global/Scenes/Game.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+GlobalData="*res://Global/Scripts/Global_data.gd"
+
 [input]
 
 ui_left={

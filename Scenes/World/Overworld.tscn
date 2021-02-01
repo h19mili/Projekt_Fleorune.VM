@@ -1,19 +1,25 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scripts/Character/Player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Graphical/icon.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Graphical/Map/Overworld_map.webp" type="Texture" id=3]
+[ext_resource path="res://Assets/Graphical/Wolf.webp" type="Texture" id=4]
+[ext_resource path="res://Scripts/World/Hostile_Area.gd" type="Script" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10.3843, 10.5613 )
 
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 25.7441, 26.6985 )
+
 [node name="Overworld" type="Node"]
 
 [node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 8.32445, -5.94604 )
 texture = ExtResource( 3 )
 
 [node name="Player" type="KinematicBody2D" parent="."]
-position = Vector2( 173.054, -335.621 )
+position = Vector2( 57.7956, -333.5 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
@@ -30,3 +36,20 @@ shape = SubResource( 1 )
 [node name="Camera2D" type="Camera2D" parent="Player"]
 current = true
 zoom = Vector2( 0.5, 0.5 )
+
+[node name="Hostile_Area" type="Area2D" parent="."]
+position = Vector2( 17.7545, -411.398 )
+scale = Vector2( 0.97738, 0.693977 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hostile_Area"]
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Hostile_Area"]
+position = Vector2( 0.223267, -0.105225 )
+scale = Vector2( 0.0806033, 0.125786 )
+texture = ExtResource( 4 )
+[connection signal="body_entered" from="Hostile_Area" to="Hostile_Area" method="_on_Hostile_Area_body_entered"]

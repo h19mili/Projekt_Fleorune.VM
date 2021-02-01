@@ -1,12 +1,12 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Enemies/Scripts/Wolf.gd" type="Script" id=1]
-[ext_resource path="res://Job.gd" type="Script" id=2]
-[ext_resource path="res://Jobs/knight.tres" type="Resource" id=3]
-[ext_resource path="res://Art/Wolf.webp" type="Texture" id=4]
-[ext_resource path="res://Art/bar(2).png" type="Texture" id=6]
-[ext_resource path="res://Art/bar(1).png" type="Texture" id=7]
-[ext_resource path="res://Player karaktär/Healthbar.gd" type="Script" id=8]
+[ext_resource path="res://Scripts/Enemies/Wolf.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Job.gd" type="Script" id=2]
+[ext_resource path="res://Resources/Wolf.tres" type="Resource" id=3]
+[ext_resource path="res://Assets/Graphical/Wolf.webp" type="Texture" id=4]
+[ext_resource path="res://Assets/Graphical/bar(2).png" type="Texture" id=6]
+[ext_resource path="res://Assets/Graphical/bar(1).png" type="Texture" id=7]
+[ext_resource path="res://Global/Scripts/Healthbar.gd" type="Script" id=8]
 
 [node name="Wolf" type="Node2D"]
 position = Vector2( 216.992, 190.41 )
