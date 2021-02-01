@@ -12,6 +12,10 @@ func _ready():
 
 func initialize():
 	var Battlers = get_players()
+	for i in Battlers:
+		print(i.Party_member)
+		if i.Party_member == true:
+			party.append(i)
 	print("BATTLERS: ")
 	print(Battlers)
 	Battlers.sort_custom(self, 'sort_players')
@@ -22,13 +26,29 @@ func initialize():
 	play_turn()
 
 func play_turn():
-	yield(active_player, "completed")
-	print("fight")
-	var new_index : int = (active_player.get_index() + 1) % get_child_count()
-	active_player = get_child(new_index)
-	yield(active_player, "completed")
-	print("again")
-	play_turn()
+	var battler : Battler = active_player
+	if battler.Current_HP > 0:
+		battler.selected = true
+	
+		var targets : Array = party
+		print(targets)
+		if not targets:
+			print("End")
+			return
+		var target : Battler
+		if battler.Party_member:
+			print("hallå")
+			emit_signal("completed")
+		else:
+			pass
+		yield(battler, "completed")
+		battler.selected = false
+	
+		var new_index : int = (active_player.get_index() + 1) % get_child_count()
+		active_player = get_child(new_index)
+		#yield(active_player, "completed")
+		print("again")
+		play_turn()
 
 func _select_target(selectable_battler : Array) -> Battler:
 	var selected_target : Battler = yield(select_arrow-_select_target(selectable_battler), "completed")
@@ -41,6 +61,9 @@ static func sort_players(a : Battler, b : Battler) -> bool:
 func _next_battler():
 	var new_index : int = (active_player.get_index() + 1) % get_child_count()
 	active_player = get_child(new_index)
+
+func get_active_player():
+	pass
 
 func get_players():
 	return get_children()

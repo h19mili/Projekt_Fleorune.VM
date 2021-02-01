@@ -12,11 +12,11 @@ func _ready():
 	pass
 
 
-func _select_target(Battlers : Array) -> Battler:
+func _select_target(Battlers : Array) -> Array:
 	print("hofisrt")
 	targets = Battlers
 	active_target = targets[0]
-	rect_scale.x = 1.0
+	rect_scale.x = 1.0 if active_target.party_member else -1.0
 	rect_global_position = active_target.target_global_position
 	grab_focus()
 	print("hi3")
@@ -24,7 +24,7 @@ func _select_target(Battlers : Array) -> Battler:
 	return seleceted_target
 
 
-func _Move_to(Battler : Battler):
+func _Move_to(battler : Battler):
 	tween.interpolate_property(
 		self,
 		'rect_global_position',

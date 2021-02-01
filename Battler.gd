@@ -2,6 +2,7 @@ extends Node2D
 
 class_name Battler
 signal completed
+var selected : bool = false setget set_selected
 export var Party_member = false
 
 var Max_HP : int
@@ -19,6 +20,9 @@ func _process(delta):
 	if Input.is_action_just_pressed("ui_accept"):
 		emit_signal("completed")
 		pass
+
+func set_selected(value):
+	selected = value
 
 func init(Max_HP, Current_HP):
 	self.Current_HP = Max_HP * 1.0
