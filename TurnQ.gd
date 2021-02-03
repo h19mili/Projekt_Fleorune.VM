@@ -4,9 +4,10 @@ class_name TurnQ
 signal completed
 var party : Array = []
 onready var active_player = Battler
-onready var select_arrow = "../Arrow"
+onready var select_arrow = get_node("../Arrow")
 
 func _ready():
+	#select_arrow._select_target()
 	initialize()
 	pass
 
@@ -23,12 +24,14 @@ func initialize():
 	print("BATTLERS efter: ")
 	print(Battlers)
 	active_player = get_child(0)
+	select_arrow._select_target(Battlers)
 	play_turn()
 
 func play_turn():
 	var battler : Battler = active_player
 	if battler.Current_HP > 0:
 		battler.selected = true
+		print(battler.selected)
 	
 		var targets : Array = party
 		print(targets)
@@ -50,10 +53,18 @@ func play_turn():
 		print("again")
 		play_turn()
 
-func _select_target(selectable_battler : Array) -> Battler:
-	var selected_target : Battler = yield(select_arrow-_select_target(selectable_battler), "completed")
+func _select_target(selectable_battler : Battler): #-> Battler:
+	print(selectable_battler)
+	var selected_target : Battler = yield(select_arrow._select_target(selectable_battler), "completed")
 	print("hilast")
 	return selected_target
+
+func _get_targets(in_party: bool = false) -> Array:
+	var targets: Array = []
+	for child in get_children():
+		if child.party_member == in_party && child.stats.health > 0:
+			targets.append(child)
+	return targets
 
 static func sort_players(a : Battler, b : Battler) -> bool:
 	return a.Speed > b.Speed

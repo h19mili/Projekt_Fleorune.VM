@@ -16,11 +16,12 @@ func _select_target(Battlers : Array) -> Array:
 	print("hofisrt")
 	targets = Battlers
 	active_target = targets[0]
-	rect_scale.x = 1.0 if active_target.party_member else -1.0
+	rect_scale.x = 1.0 if active_target.Party_member else -1.0
 	rect_global_position = active_target.target_global_position
 	grab_focus()
 	print("hi3")
 	var seleceted_target : Battler = yield(self, "target_selected")
+	targets = []
 	return seleceted_target
 
 
@@ -29,14 +30,15 @@ func _Move_to(battler : Battler):
 		self,
 		'rect_global_position',
 		rect_global_position,
-		Battler.target_global_position,
+		battler.target_global_position,
 		Move,
 		Tween.TRANS_CUBIC,
-		Tween.EASE_OUT)
+		Tween.EASE_OUT
+		)
 	tween.start()
 
 
-func _gui_input(event):
+func _input(event):
 	if !visible:
 		return
 	
