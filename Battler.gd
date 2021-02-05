@@ -5,7 +5,7 @@ signal completed
 var selected : bool = false setget set_selected
 var selectable: bool = false setget set_selectable
 export var Party_member = false
-var target_global_position: Vector2
+onready var target_global_position: Vector2
 
 var Max_HP : int
 var Current_HP : int 
@@ -40,7 +40,7 @@ func Healthbar(value):
 	self.Max_HP = Max_HP * 1.0
 	self.Current_HP = clamp((Current_HP - value), 0, Max_HP)
 	update()
-	Current_HP < 0 
+	Current_HP < 0
 
 func update():
 	var percentage = Current_HP / Max_HP
