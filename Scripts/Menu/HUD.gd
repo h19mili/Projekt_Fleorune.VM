@@ -62,3 +62,4 @@ func Options():
 func Quit():
 	get_tree().change_scene("res://Scenes/Menu/Main.tscn")
 	Options.paused = false
+
