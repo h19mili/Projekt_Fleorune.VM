@@ -1,7 +1,7 @@
 extends Control
 
-signal target_selected(Battler)
-export var Move : float = 0.1
+signal target_selected(battler)
+export var Move : float = 0.5
 var target_selection = 0
 onready var tween = $Tween
 onready var targets : Array
@@ -14,22 +14,21 @@ func _ready():
 
 func select_target(battlers : Array) -> Array:
 	visible = true
-	print("battler0")
-	print(battlers)
 	targets = battlers
 	active_target = targets[0]
 	print("HI")
 	print(targets)
 	rect_scale.x = 1.0 if active_target.Party_member else -1.0
 	rect_global_position = active_target.target_global_position
-	#grab_focus()
-	var selected_target = active_target  #: Battler = yield(self, "target_selected")
+	grab_focus()
+	var selected_target : Battler = yield(self, "target_selected")
+	#active_target 
 	#targets = []
-	print(targets)
-	return selected_target
-	#if not selected_target:
-		#return []
-	#return [selected_target]
+	#return selected_target
+	print("hi")
+	if not selected_target:
+		return []
+	return [selected_target]
 
 
 func _Move_to(battler : Battler):
@@ -50,7 +49,7 @@ func _input(event):
 		return
 	
 	if event.is_action_pressed("ui_left"):
-		emit_signal("target_selected", targets)
+		emit_signal("target_selected", active_target)
 		accept_event()
 	elif event.is_action_pressed("ui_cancel"):
 		emit_signal("target_selected", null)

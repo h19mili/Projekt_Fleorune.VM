@@ -39,16 +39,15 @@ func play_turn():
 		print(targets)
 		if not targets:
 			print("End")
-			return
 		var target : Battler
 		if battler.Party_member:
-			
+			#yield(select_arrow.select_target(battler), "completed")
+			yield(active_player, "completed")
 			print("hallå")
-			emit_signal("completed")
 		else:
-			pass
-		yield(battler, "completed")
-		print("fuck")
+			yield(active_player, "completed")
+			print("Enemy")
+		#yield(battler, "completed")
 		battler.selected = false
 	
 		var new_index : int = (active_player.get_index() + 1) % get_child_count()
@@ -58,9 +57,8 @@ func play_turn():
 		play_turn()
 
 func _select_target(selectable_battlers : Array) -> Battler:
-	#print(selectable_battler)
-	var selected_target: Battler = select_arrow.select_target(selectable_battlers)#, "target_selected")
-	#var selected_target : Battler = yield(select_arrow.select_target(selectable_battlers), "completed")
+	#var selected_target : Battler = select_arrow.select_target(selectable_battlers)#, "target_selected")
+	var selected_target : Battler = yield(select_arrow.select_target(selectable_battlers), "completed")
 	print("hilast")
 	return selected_target
 

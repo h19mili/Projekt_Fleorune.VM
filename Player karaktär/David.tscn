@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Battler.gd" type="Script" id=1]
 [ext_resource path="res://Job.gd" type="Script" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Art/bar(1).png" type="Texture" id=7]
 [ext_resource path="res://Player karaktär/Healthbar.gd" type="Script" id=8]
 [ext_resource path="res://Player karaktär/Mana_bar.gd" type="Script" id=9]
+[ext_resource path="res://Player karaktär/Battler_Action.gd" type="Script" id=10]
 
 [node name="David" type="Node2D"]
 script = ExtResource( 1 )
@@ -64,3 +65,6 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Battler_Action" type="Node" parent="."]
+script = ExtResource( 10 )

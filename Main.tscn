@@ -26,4 +26,3 @@ margin_left = -486.879
 margin_top = -237.043
 margin_right = -486.879
 margin_bottom = -237.043
-[connection signal="target_selected" from="Arrow" to="TurnQ" method="_select_target"]
