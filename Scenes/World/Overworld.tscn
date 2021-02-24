@@ -1,16 +1,9 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Scripts/Character/Player.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Graphical/icon.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Graphical/Map/Overworld_map.webp" type="Texture" id=3]
-[ext_resource path="res://Assets/Graphical/Wolf.webp" type="Texture" id=4]
-[ext_resource path="res://Scripts/World/Hostile_Area.gd" type="Script" id=5]
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 10.3843, 10.5613 )
-
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 25.7441, 26.6985 )
+[ext_resource path="res://Scripts/World/Hostile_Area_Wolf.gd" type="Script" id=4]
+[ext_resource path="res://Scripts/World/Hostile_Area_Bandit.gd" type="Script" id=5]
+[ext_resource path="res://Scenes/Character/David.tscn" type="PackedScene" id=6]
 
 [node name="Overworld" type="Node"]
 
@@ -18,38 +11,45 @@ extents = Vector2( 25.7441, 26.6985 )
 position = Vector2( 8.32445, -5.94604 )
 texture = ExtResource( 3 )
 
-[node name="Player" type="KinematicBody2D" parent="."]
-position = Vector2( 57.7956, -333.5 )
-script = ExtResource( 1 )
+[node name="Hostile_Area" type="Area2D" parent="."]
+position = Vector2( 11.7477, -438.021 )
+scale = Vector2( 0.97738, 0.693977 )
+gravity_vec = Vector2( 0, 0 )
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="Player"]
-position = Vector2( -1.71661e-05, 1.90735e-06 )
-scale = Vector2( 0.345746, 0.345746 )
-texture = ExtResource( 2 )
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hostile_Area"]
+polygon = PoolVector2Array( -105.711, -55.6152, -108.289, -20.2129, -99.2654, -6.1427, -98.6209, 13.8279, -89.9196, 29.2598, -75.4174, 42.4222, -66.0716, 50.592, -57.3703, 66.0238, -49.6358, 85.5405, -42.2236, 101.88, -42.2236, 122.758, -38.3564, 137.736, -34.1669, 134.559, -29.9774, 117.766, -23.8542, 104.603, -5.48484, 102.788, 13.5291, 96.4335, 28.6758, 86.9022, 37.0548, 68.2932, 47.0452, 66.4777, 55.4242, 80.5479, 62.1918, 69.6548, 62.8364, 46.5071, 79.9167, 39.6989, 81.2058, 15.6434, 95.3857, 13.8279, 99.2529, -11.1353, 106.665, -22.9361, 126.001, -31.5598, 149.849, -11.1353, 164.029, -11.1353, 182.076, -11.1353, 179.498, -58.7924, 157.906, -80.5785, 125.357, -112.804, 88.618, -117.343, 60.5805, -91.9254, 32.543, -76.4937, 20.619, -72.4087, -4.84031, -81.0324, -34.8114, -100.549, -36.4228, -124.151, -12.8972, -184.517, -14.8308, -229.451, -25.788, -230.813, -50.2805, -204.034, -75.7398, -189.056, -87.3415, -198.133, -99.2655, -182.248, -92.1756, -167.27, -114.734, -135.498, -117.635, -110.989, -99.5878, -94.6494, -98.621, -80.5792, -108.289, -72.8633 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-shape = SubResource( 1 )
+[node name="Combat_Trigger" type="Timer" parent="Hostile_Area"]
+wait_time = 2.0
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
-current = true
-zoom = Vector2( 0.5, 0.5 )
-
-[node name="Hostile_Area" type="Area2D" parent="."]
-position = Vector2( 17.7545, -411.398 )
+[node name="Hostile_Area2" type="Area2D" parent="."]
+position = Vector2( -117.064, -241.132 )
 scale = Vector2( 0.97738, 0.693977 )
+gravity_vec = Vector2( 0, 0 )
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hostile_Area"]
-shape = SubResource( 2 )
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hostile_Area2"]
+polygon = PoolVector2Array( -126.301, 111.936, -98.9865, 135.018, -55.283, 103.281, -30.0169, 105.204, 43.7326, 159.061, 84.0217, 112.898, -72.3547, -40.9792, -93.5235, -10.2038, -129.715, 18.6482, -126.301, 60.0027 )
 
-[node name="Sprite" type="Sprite" parent="Hostile_Area"]
-position = Vector2( 0.223267, -0.105225 )
-scale = Vector2( 0.0806033, 0.125786 )
-texture = ExtResource( 4 )
+[node name="Combat_Trigger" type="Timer" parent="Hostile_Area2"]
+wait_time = 2.0
+
+[node name="David" parent="." instance=ExtResource( 6 )]
+position = Vector2( 16.8369, -278.371 )
+
+[node name="Camera2D" type="Camera2D" parent="David"]
+position = Vector2( -1.3632, -3.07043 )
+current = true
 [connection signal="body_entered" from="Hostile_Area" to="Hostile_Area" method="_on_Hostile_Area_body_entered"]
+[connection signal="body_exited" from="Hostile_Area" to="Hostile_Area" method="_on_Hostile_Area_body_exited"]
+[connection signal="timeout" from="Hostile_Area/Combat_Trigger" to="Hostile_Area" method="_on_Combat_Trigger_timeout"]
+[connection signal="body_entered" from="Hostile_Area2" to="Hostile_Area2" method="_on_Hostile_Area_body_entered"]
+[connection signal="body_exited" from="Hostile_Area2" to="Hostile_Area2" method="_on_Hostile_Area_body_exited"]
+[connection signal="timeout" from="Hostile_Area2/Combat_Trigger" to="Hostile_Area2" method="_on_Combat_Trigger_timeout"]

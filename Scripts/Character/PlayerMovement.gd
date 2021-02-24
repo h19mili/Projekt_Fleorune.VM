@@ -5,7 +5,7 @@ export (int) var speed = 100
 var velocity = Vector2()
 
 func _ready():
-	GlobalData.player = self
+	pass
 
 func get_input():
 	velocity = Vector2()
@@ -22,4 +22,3 @@ func get_input():
 func _physics_process(delta):
 	get_input()
 	velocity = move_and_slide(velocity)
-

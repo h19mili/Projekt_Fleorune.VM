@@ -1,12 +1,12 @@
-extends KinematicBody2D
-
+extends "res://Global/Scripts/Battler.gd"
+	
 export (int) var speed = 100
-
+	
 var velocity = Vector2()
-
+	
 func _ready():
-	GlobalData.player = self
-
+	pass
+	
 func get_input():
 	velocity = Vector2()
 	if Input.is_action_pressed('ui_right'):
@@ -18,8 +18,9 @@ func get_input():
 	if Input.is_action_pressed('ui_up'):
 		velocity.y -= 1
 	velocity = velocity.normalized() * speed
-
+	
 func _physics_process(delta):
 	get_input()
 	velocity = move_and_slide(velocity)
-
+	
+	

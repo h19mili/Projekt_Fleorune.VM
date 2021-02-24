@@ -18,4 +18,4 @@ func _process(delta):
 	if Input.is_action_just_pressed("ui_accept"):
 		Parent.Current_HP -= 1
 		_Healthbar()
-		print(Parent.Current_HP)
+		print("Hp= ", Parent.Current_HP)

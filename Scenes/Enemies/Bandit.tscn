@@ -2,14 +2,14 @@
 
 [ext_resource path="res://Scripts/Enemies/Wolf.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Job.gd" type="Script" id=2]
+[ext_resource path="res://Resources/Bandit.tres" type="Resource" id=3]
 [ext_resource path="res://Assets/Graphical/Bandit.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Graphical/bar(2).png" type="Texture" id=6]
 [ext_resource path="res://Assets/Graphical/bar(1).png" type="Texture" id=7]
 [ext_resource path="res://Global/Scripts/Healthbar.gd" type="Script" id=8]
 
-[sub_resource type="Resource" id=1]
-
-[node name="Bandit" type="Node2D"]
+[node name="Bandit" type="KinematicBody2D"]
+position = Vector2( 748.119, 328.098 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
@@ -23,7 +23,7 @@ flip_h = true
 
 [node name="Job" type="Node" parent="."]
 script = ExtResource( 2 )
-statblock = SubResource( 1 )
+statblock = ExtResource( 3 )
 
 [node name="Healthbar" type="TextureProgress" parent="."]
 margin_left = -30.0
