@@ -1,10 +1,11 @@
 extends "res://Global/Scripts/Battler.gd"
 	
-export (int) var speed = 100
+var Movement = 100
 	
 var velocity = Vector2()
 	
 func _ready():
+	self.position = GlobalData.playerpos
 	pass
 	
 func get_input():
@@ -17,10 +18,12 @@ func get_input():
 		velocity.y += 1
 	if Input.is_action_pressed('ui_up'):
 		velocity.y -= 1
-	velocity = velocity.normalized() * speed
+	velocity = velocity.normalized() * Movement
 	
 func _physics_process(delta):
 	get_input()
 	velocity = move_and_slide(velocity)
+	
+	
 	
 	

@@ -10,8 +10,10 @@
 [ext_resource path="res://Global/Scripts/Healthbar.gd" type="Script" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 18.75, 18.25 )
 
 [node name="David" type="KinematicBody2D"]
+position = Vector2( 0, -0.25 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
@@ -23,9 +25,9 @@ statblock = ExtResource( 3 )
 
 [node name="Healthbar" type="TextureProgress" parent="."]
 margin_left = -30.0
-margin_top = 15.0
+margin_top = 5.0
 margin_right = 34.0
-margin_bottom = 79.0
+margin_bottom = 69.0
 value = 10.0
 texture_under = ExtResource( 6 )
 texture_progress = ExtResource( 7 )
@@ -38,9 +40,9 @@ __meta__ = {
 script = ExtResource( 5 )
 
 [node name="Level_number" type="Label" parent="Exphandler"]
-margin_left = 15.0
+margin_left = 5.0
 margin_top = -25.0
-margin_right = 55.0
+margin_right = 45.0
 margin_bottom = -11.0
 text = "1"
 align = 1
@@ -49,8 +51,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.609375, 0.59375 )
+texture = ExtResource( 4 )
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
-
-[node name="Sprite" type="Sprite" parent="."]
-texture = ExtResource( 4 )
