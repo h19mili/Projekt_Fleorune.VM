@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Wolf.webp-ac4e4d62349c171791a08e813901e57e.stex"
+path="res://.import/Sprite_Guard_L.png-75bd742f7127b5fd8bba01a94f423cfa.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Graphical/Wolf.webp"
-dest_files=[ "res://.import/Wolf.webp-ac4e4d62349c171791a08e813901e57e.stex" ]
+source_file="res://Assets/Graphical/Sprite_Guard_L.png"
+dest_files=[ "res://.import/Sprite_Guard_L.png-75bd742f7127b5fd8bba01a94f423cfa.stex" ]
 
 [params]
 
