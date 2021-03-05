@@ -75,13 +75,11 @@ __meta__ = {
 [node name="name" type="RichTextLabel" parent="DialogBox"]
 anchor_bottom = 1.0
 margin_left = 524.667
-margin_top = 670.663
+margin_top = 671.663
 margin_right = 842.667
-margin_bottom = 684.663
+margin_bottom = 685.663
 custom_fonts/normal_font = SubResource( 2 )
 bbcode_enabled = true
-bbcode_text = "Sir Tempory"
-text = "Sir Tempory"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
