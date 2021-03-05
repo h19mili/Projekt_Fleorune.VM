@@ -1,9 +1,26 @@
 extends Control
 
-var dialogue_data = {}
+var json_parse = {}
+var json_file
 
-func load_json(json, type):
-	var file = File.new();
-	file.open(json["dialogue"], File.READ);
-	dialogue_data = parse_json(file.get_as_text())
+
+func _ready():
+	json_file = _load()
+	print(json_file)
+	json_parse = JSON.parse(json_file).result
+	print(json_parse)
+	pass
+
+
+func _process(delta):
+	pass
+
+
+func _load():
+	var file = File.new()
+	file.open("res://Data/dialog.json", File.READ)
+	var content = file.get_as_text()
+	print (content)
 	file.close()
+	return content
+	pass
