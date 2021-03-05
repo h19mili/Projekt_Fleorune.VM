@@ -45,7 +45,7 @@ func play_turn():
 			yield(active_player, "completed")
 			print("hallå")
 		else:
-			yield(active_player, "completed")
+			yield(active_player, "emattack") # a
 			print("Enemy")
 		#yield(battler, "completed")
 		battler.selected = false
@@ -62,12 +62,6 @@ func _select_target(selectable_battlers : Array) -> Battler:
 	print("hilast")
 	return selected_target
 
-func _get_targets(in_party: bool = false) -> Array:
-	var targets: Array = []
-	for child in get_children():
-		if child.Party_member == in_party && child.active_player.Max_HP > 0:
-			targets.append(child)
-	return targets
 
 static func sort_players(a : Battler, b : Battler) -> bool:
 	return a.Speed > b.Speed

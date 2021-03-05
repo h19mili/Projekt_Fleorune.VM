@@ -2,6 +2,7 @@ extends Node2D
 class_name Battler
 
 signal completed
+signal emattack
 var selected : bool = false setget set_selected
 var selectable: bool = false setget set_selectable
 export var Party_member = false
@@ -23,6 +24,9 @@ func _process(delta):
 	if Input.is_action_just_pressed("ui_accept"):
 		emit_signal("completed")
 		pass
+	if Input.is_action_just_pressed("ui_a"):
+		emit_signal("emattack")
+	Attack()
 
 func set_selected(value):
 	selected = value
@@ -53,3 +57,15 @@ func character(stats : Statblock):
 	Speed = stats.Speed
 	Current_HP = Max_HP
 
+func Attack():
+	if Party_member == false:
+		if selected == true:
+			get_node("Battler_Action").Attack_action()
+			emit_signal("emattack")
+			print("Attack")
+
+
+
+
+
+	pass

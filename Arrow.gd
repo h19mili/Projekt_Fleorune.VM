@@ -1,6 +1,6 @@
 extends Control
 
-signal target_selected(battler)
+signal target_selected(TurnQ)
 export var Move : float = 0.5
 var target_selection = 0
 onready var tween = $Tween
@@ -28,6 +28,7 @@ func select_target(battlers : Array) -> Array:
 	print("hi")
 	if not selected_target:
 		return []
+		print("fail")
 	return [selected_target]
 
 
