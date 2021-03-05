@@ -1,10 +1,7 @@
 extends Control
 
-onready var json = get_node("..")
-
-var dialog = [
-	'hej'
-]
+var json_parse = {}
+var json_file
 
 var conversation_id = "001"
 var dialog_index = 0
@@ -12,6 +9,11 @@ var finished = false
 
 
 func _ready():
+	json_file = _load()
+	print(json_file)
+	json_parse = JSON.parse(json_file).result
+	print(json_parse)
+	
 	load_dialog()
 
 
@@ -21,8 +23,9 @@ func _process(delta):
 
 
 func load_dialog():
-	if dialog_index < json.json_parse[conversation_id].size():
-		$RichTextLabel.bbcode_text = json.json_parse[conversation_id][dialog_index].text
+	if dialog_index < json_parse[conversation_id].size():
+		$RichTextLabel.bbcode_text = json_parse[conversation_id][dialog_index].text
+		$name.bbcode_text = json_parse[conversation_id][dialog_index].name
 		$RichTextLabel.percent_visible = 0
 		$Tween.interpolate_property(
 			$RichTextLabel, "percent_visible", 0, 1, 1, 
@@ -32,3 +35,14 @@ func load_dialog():
 	else:
 		queue_free()
 	dialog_index += 1
+	
+	
+func _load():
+	var file = File.new()
+	file.open("res://Data/dialog.json", File.READ)
+	var content = file.get_as_text()
+	print (content)
+	file.close()
+	return content
+	pass
+
