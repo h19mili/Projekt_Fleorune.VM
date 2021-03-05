@@ -2,12 +2,12 @@ extends Node
 
 signal Attack_done
 var Damage = 0
-var Cstats = Battler
 
 func _ready():
 	pass 
 
 func Attack_action():
-	Damage += Cstats.STR
+	Damage = get_parent().STR
 	print(Damage)
+	return Damage
 	pass

@@ -14,6 +14,7 @@ var Max_Mana : int
 var Speed : int
 var STR : int 
 var DEF : int
+var CURRENT_DMG : int
 
 func _ready():
 	init(Max_HP, Current_HP)
@@ -60,7 +61,7 @@ func character(stats : Statblock):
 func Attack():
 	if Party_member == false:
 		if selected == true:
-			get_node("Battler_Action").Attack_action()
+			CURRENT_DMG = get_node("Battler_Action").Attack_action()
 			emit_signal("emattack")
 			print("Attack")
 

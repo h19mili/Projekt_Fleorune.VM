@@ -46,6 +46,12 @@ func play_turn():
 			print("hallå")
 		else:
 			yield(active_player, "emattack") # a
+			print("TOBBES GREJ!!!")
+			print("Current Damage:")
+			print(active_player.CURRENT_DMG)
+			print("Current HP:")
+			print(get_child(1).Current_HP)			
+			get_child(1).Current_HP -= active_player.CURRENT_DMG
 			print("Enemy")
 		#yield(battler, "completed")
 		battler.selected = false
