@@ -1,27 +1,41 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=14 format=2]
 
-[ext_resource path="res://Fonts/Menu/DiabloHeavy.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Fonts/Menu/AncientModernTales-a7Po.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scripts/Menu/Options.gd" type="Script" id=2]
-[ext_resource path="res://Fonts/Menu/DiabloLight.ttf" type="DynamicFontData" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 100
 font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=2]
-font_data = ExtResource( 3 )
+font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=3]
-font_data = ExtResource( 3 )
+font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=4]
-font_data = ExtResource( 3 )
+font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=5]
-font_data = ExtResource( 3 )
+font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=6]
-font_data = ExtResource( 3 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=7]
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=8]
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=9]
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=10]
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=11]
+font_data = ExtResource( 1 )
 
 [node name="Options" type="Control"]
 anchor_right = 1.0
@@ -88,6 +102,7 @@ __meta__ = {
 }
 
 [node name="Options_cntrl_Video" type="Control" parent="."]
+visible = false
 anchor_top = 0.35
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -97,6 +112,7 @@ margin_left = 150.0
 margin_top = 50.0
 margin_right = 450.0
 margin_bottom = 80.0
+custom_fonts/font = SubResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -106,6 +122,7 @@ margin_left = 150.0
 margin_top = 150.0
 margin_right = 450.0
 margin_bottom = 180.0
+custom_fonts/font = SubResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -126,6 +143,7 @@ margin_left = 150.0
 margin_top = 50.0
 margin_right = 450.0
 margin_bottom = 80.0
+custom_fonts/font = SubResource( 7 )
 text = "Mute Master Volume"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -142,10 +160,11 @@ __meta__ = {
 }
 
 [node name="btn_Music_Mute" type="Button" parent="Options_cntrl_Audio"]
-margin_left = 148.665
+margin_left = 150.0
 margin_top = 150.0
-margin_right = 448.665
+margin_right = 450.0
 margin_bottom = 180.0
+custom_fonts/font = SubResource( 8 )
 text = "Mute Music Volume"
 
 [node name="sldr_Music" type="HSlider" parent="Options_cntrl_Audio"]
@@ -163,6 +182,7 @@ margin_left = 150.0
 margin_top = 250.0
 margin_right = 450.0
 margin_bottom = 280.0
+custom_fonts/font = SubResource( 9 )
 text = "Mute Effects Volume"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -179,7 +199,6 @@ __meta__ = {
 }
 
 [node name="Options_cntrl_Controls" type="Control" parent="."]
-visible = false
 anchor_top = 0.35
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -192,7 +211,7 @@ margin_left = 151.335
 margin_top = 50.0
 margin_right = 451.335
 margin_bottom = 80.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 10 )
 text = "Use"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -214,7 +233,7 @@ margin_left = 150.0
 margin_top = 150.0
 margin_right = 450.0
 margin_bottom = 180.0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 11 )
 text = "Pause"
 __meta__ = {
 "_edit_use_anchors_": false
