@@ -2,6 +2,7 @@ extends Control
 
 signal target_selected(TurnQ)
 export var Move : float = 0.5
+var selected
 var target_selection = 0
 onready var tween = $Tween
 onready var targets : Array
@@ -20,7 +21,9 @@ func select_target(battlers : Array) -> Array:
 	rect_global_position = active_target.target_global_position
 	grab_focus()
 	var selected_target : Battler = yield(self, "target_selected")
+	selected = selected_target
 	print("selected")
+	print(selected)
 	print(selected_target)
 	#active_target 
 	#targets = []
@@ -29,7 +32,7 @@ func select_target(battlers : Array) -> Array:
 	if not selected_target:
 		return []
 		print("fail")
-	return [selected_target]
+	return selected_target
 
 
 func _Move_to(battler : Battler):

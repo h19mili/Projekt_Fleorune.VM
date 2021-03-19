@@ -4,13 +4,13 @@ class_name TurnQ
 signal completed
 signal targets_selected(selected_target)
 var party : Array = []
+var Etarget
 onready var active_player = Battler
 onready var select_arrow = get_node("../Arrow")
 
 func _ready():
-	#select_arrow.select_target()
+	Etarget = get_child(1)
 	initialize()
-	#select_arrow._Move_to(null)
 	pass
 
 func initialize():
@@ -26,6 +26,7 @@ func initialize():
 	#print(Battlers)
 	active_player = get_child(0)
 	select_arrow.select_target(Battlers)
+	#Etarget=select_arrow.selected
 	play_turn()
 
 func play_turn():
@@ -43,29 +44,29 @@ func play_turn():
 			#yield(select_arrow.select_target(battler), "completed")
 			yield(active_player, "completed")
 			print("Player End")
+			select_arrow.select_target(targets)
+			Etarget=select_arrow.selected
 		else:
 			yield(active_player, "emattack") # a
-			print("TOBBES GREJ!!!")
-			print("Current Damage:")
 			print(active_player.CURRENT_DMG)
 			print("Current HP:")
-			print(get_child(1).Current_HP)			
-			get_child(1).Current_HP -= active_player.CURRENT_DMG
-			print("Enemy")
+			print(Etarget.Current_HP)
+			print("Etarget")
+			print(Etarget)
+			Etarget.Current_HP -= active_player.CURRENT_DMG
 		#yield(battler, "completed")
 		battler.selected = false
 	
 		var new_index : int = (active_player.get_index() + 1) % get_child_count()
 		active_player = get_child(new_index)
 		#yield(active_player, "completed")
-		print("again")
 		play_turn()
 
-func _select_target(selectable_battlers : Array) -> Battler:
+#func _select_target(selectable_battlers : Array) -> Battler:
 	#var selected_target : Battler = select_arrow.select_target(selectable_battlers)#, "target_selected")
-	var selected_target : Battler = yield(select_arrow.select_target(selectable_battlers), "completed")
-	print("hilast")
-	return selected_target
+	#var selected_target : Battler = yield(select_arrow.select_target(selectable_battlers), "completed")
+	#print("hilast")
+	#return selected_target
 
 
 static func sort_players(a : Battler, b : Battler) -> bool:
