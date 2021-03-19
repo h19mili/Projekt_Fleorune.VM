@@ -15,16 +15,15 @@ func _ready():
 
 func initialize():
 	var Battlers = get_players()
-	for i in Battlers:
-		print(i.Party_member)
+	#for i in Battlers:
 		#if i.Party_member == true:
 			#party.append(i)
-	print("BATTLERS: ")
-	print(Battlers)
+	#print("BATTLERS: ")
+	#print(Battlers)
 	Battlers.sort_custom(self, 'sort_players')
 	Battlers[0].raise()
-	print("BATTLERS efter: ")
-	print(Battlers)
+	#print("BATTLERS efter: ")
+	#print(Battlers)
 	active_player = get_child(0)
 	select_arrow.select_target(Battlers)
 	play_turn()
@@ -43,7 +42,7 @@ func play_turn():
 		if battler.Party_member:
 			#yield(select_arrow.select_target(battler), "completed")
 			yield(active_player, "completed")
-			print("hallå")
+			print("Player End")
 		else:
 			yield(active_player, "emattack") # a
 			print("TOBBES GREJ!!!")

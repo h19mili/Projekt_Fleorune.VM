@@ -16,12 +16,12 @@ func select_target(battlers : Array) -> Array:
 	visible = true
 	targets = battlers
 	active_target = targets[0]
-	print("HI")
-	print(targets)
 	rect_scale.x = 1.0 if active_target.Party_member else -1.0
 	rect_global_position = active_target.target_global_position
 	grab_focus()
 	var selected_target : Battler = yield(self, "target_selected")
+	print("selected")
+	print(selected_target)
 	#active_target 
 	#targets = []
 	#return selected_target
