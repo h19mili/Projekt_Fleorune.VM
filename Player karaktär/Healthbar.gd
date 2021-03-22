@@ -1,7 +1,7 @@
 extends TextureProgress
 
 onready var Max_HP = get_node("..")
-
+var Text_health
 
 func _ready():
 	_Healthbar()
@@ -11,6 +11,8 @@ func _ready():
 func _Healthbar():
 	self.max_value = Max_HP.Max_HP
 	self.value = Max_HP.Current_HP
+	Text_health=str(value)
+	get_node("Healthnumber").set_text(Text_health)
 	pass
  
 

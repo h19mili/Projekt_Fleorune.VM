@@ -25,9 +25,6 @@ func select_target(battlers : Array) -> Array:
 	print("selected")
 	print(selected)
 	print(selected_target)
-	#active_target 
-	#targets = []
-	#return selected_target
 	print("hi")
 	if not selected_target:
 		return []

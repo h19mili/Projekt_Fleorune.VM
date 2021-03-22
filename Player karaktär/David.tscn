@@ -37,6 +37,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Healthnumber" type="Label" parent="Healthbar"]
+margin_left = 61.8502
+margin_top = 14.315
+margin_right = 79.8502
+margin_bottom = 28.315
+text = "70"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Mana_bar" type="TextureProgress" parent="."]
 margin_left = -30.0
 margin_top = 25.0

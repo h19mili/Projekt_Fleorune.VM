@@ -5,6 +5,7 @@ signal completed
 signal targets_selected(selected_target)
 var party : Array = []
 var Etarget
+onready var Battler_action = Combataction
 onready var active_player = Battler
 onready var select_arrow = get_node("../Arrow")
 
@@ -18,12 +19,8 @@ func initialize():
 	#for i in Battlers:
 		#if i.Party_member == true:
 			#party.append(i)
-	#print("BATTLERS: ")
-	#print(Battlers)
 	Battlers.sort_custom(self, 'sort_players')
 	Battlers[0].raise()
-	#print("BATTLERS efter: ")
-	#print(Battlers)
 	active_player = get_child(0)
 	select_arrow.select_target(Battlers)
 	#Etarget=select_arrow.selected
@@ -42,24 +39,22 @@ func play_turn():
 		var target : Battler
 		if battler.Party_member:
 			#yield(select_arrow.select_target(battler), "completed")
+			select_arrow.select_target(targets)
 			yield(active_player, "completed")
 			print("Player End")
-			select_arrow.select_target(targets)
 			Etarget=select_arrow.selected
+
 		else:
 			yield(active_player, "emattack") # a
-			print(active_player.CURRENT_DMG)
 			print("Current HP:")
 			print(Etarget.Current_HP)
 			print("Etarget")
 			print(Etarget)
 			Etarget.Current_HP -= active_player.CURRENT_DMG
-		#yield(battler, "completed")
 		battler.selected = false
 	
 		var new_index : int = (active_player.get_index() + 1) % get_child_count()
 		active_player = get_child(new_index)
-		#yield(active_player, "completed")
 		play_turn()
 
 #func _select_target(selectable_battlers : Array) -> Battler:
