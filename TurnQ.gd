@@ -41,6 +41,7 @@ func play_turn():
 			#yield(select_arrow.select_target(battler), "completed")
 			select_arrow.select_target(targets)
 			yield(active_player, "completed")
+			Etarget.Current_HP -= active_player.CURRENT_DMG
 			print("Player End")
 			Etarget=select_arrow.selected
 
