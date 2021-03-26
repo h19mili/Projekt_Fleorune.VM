@@ -1,6 +1,6 @@
 extends "res://Global/Scripts/Battler.gd"
 	
-var Movement = 100
+var Movement = 50
 	
 var velocity = Vector2()
 	
