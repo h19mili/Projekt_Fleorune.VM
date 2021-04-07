@@ -1959,6 +1959,7 @@ zoom = Vector2( 0.3, 0.3 )
 [node name="CollisionBoxes" type="Node" parent="."]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="CollisionBoxes"]
+visible = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CollisionBoxes/StaticBody2D"]
 position = Vector2( 0.667419, -0.333679 )
