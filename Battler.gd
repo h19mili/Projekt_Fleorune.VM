@@ -3,6 +3,7 @@ class_name Battler
 
 signal completed
 signal emattack
+signal Attack_done
 var selected : bool = false setget set_selected
 var selectable : bool = false setget set_selectable
 export var Party_member = false
@@ -23,10 +24,13 @@ func _ready():
 
 func _process(delta):
 	if Input.is_action_just_pressed("ui_accept"):
-		emit_signal("completed")
+		#emit_signal("completed")
 		pass
 	if Input.is_action_just_pressed("ui_a"):
-		emit_signal("emattack")
+		#emit_signal("emattack")
+		#emit_signal("Attack_done")
+		print("stop")
+		pass
 	Attack()
 
 func set_selected(value):
@@ -62,8 +66,10 @@ func Attack():
 	if Party_member == false:
 		if selected == true:
 			CURRENT_DMG = get_node("Battler_Action").Attack_action()
-			emit_signal("emattack")
+			#emit_signal("emattack")
+			emit_signal("Attack_done")
 			print("Attack")
+			print("hi")
 
 
 

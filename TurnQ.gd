@@ -6,7 +6,7 @@ signal completed
 signal targets_selected(selected_target)
 var party : Array = []
 var Etarget
-onready var Battler_action = Combataction
+onready var Battler_action = $Battler_Action #Combataction
 onready var active_player = Battler
 onready var select_arrow = get_node("../Arrow")
 
@@ -47,9 +47,10 @@ func play_turn():
 			Etarget=select_arrow.selected
 
 		else:
-			yield(active_player, "emattack") # a
+			#Battler_action = get_child(0)
+			#yield(active_player, "emattack") # a
 			print("waiting for eneamy")
-			yield(Battler_action, "Attack_done") 
+			yield(Battler_action, "Attack_done")
 			print("Current HP:")
 			print(Etarget.Current_HP)
 			print("Etarget")
