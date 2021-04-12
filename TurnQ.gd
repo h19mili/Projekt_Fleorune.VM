@@ -2,6 +2,7 @@ extends YSort
 
 class_name TurnQ
 signal completed
+#signal Attack_done
 signal targets_selected(selected_target)
 var party : Array = []
 var Etarget
@@ -47,6 +48,8 @@ func play_turn():
 
 		else:
 			yield(active_player, "emattack") # a
+			print("waiting for eneamy")
+			yield(Battler_action, "Attack_done") 
 			print("Current HP:")
 			print(Etarget.Current_HP)
 			print("Etarget")

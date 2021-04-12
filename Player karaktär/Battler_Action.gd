@@ -3,7 +3,8 @@ class_name Combataction
 
 signal Attack_done
 var Damage = 0
-var Attacker 
+var Attacker
+#onready var turnq : TurnQ
 
 func _ready():
 	pass
@@ -16,10 +17,11 @@ func _process(delta):
 
 func Attack_action():
 	Damage = get_parent().STR
-	#Attacker.current_HP
+	#emit_signal("Attack_done")
 	print("Battler_Action")
 	print(Attacker)
 	print(Damage)
 	return Damage
+
 
 
