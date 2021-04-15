@@ -2,11 +2,12 @@ extends YSort
 
 class_name TurnQ
 signal completed
+signal turn_done
 #signal Attack_done
 signal targets_selected(selected_target)
 var party : Array = []
 var Etarget
-onready var Battler_action = $Battler_Action #Combataction
+#onready var Battler_action = $Battler_Action #Combataction
 onready var active_player = Battler
 onready var select_arrow = get_node("../Arrow")
 
@@ -31,31 +32,12 @@ func play_turn():
 	var battler : Battler = active_player
 	if battler.Current_HP > 0:
 		battler.selected = true
-		print(battler.selected)
-	
 		var targets : Array = get_players()
-		print(targets)
 		if not targets:
-			print("End")
-		var target : Battler
-		if battler.Party_member:
-			#yield(select_arrow.select_target(battler), "completed")
-			select_arrow.select_target(targets)
-			yield(active_player, "completed")
-			Etarget = select_arrow.selected
-			Etarget.Current_HP -= active_player.CURRENT_DMG
-			print("Player End")
-
-		else:
-			Battler_action = get_child(0)
-			#yield(active_player, "emattack") # a
-			print("waiting for eneamy")
-			yield(Battler_action, "Attack_done")
-			print("Current HP:")
-			print(Etarget.Current_HP)
-			print("Etarget")
-			print(Etarget)
-			Etarget.Current_HP -= active_player.CURRENT_DMG
+			print("NO TARGETS!! END!")
+		battler.my_turn(targets)
+		yield(battler,"turn_done")
+		print("JAG ÄR FÖRBI!!!")
 		battler.selected = false
 	
 		var new_index : int = (active_player.get_index() + 1) % get_child_count()
@@ -83,7 +65,7 @@ func get_players():
 	return get_children()
 
 func _Done():
-	emit_signal("completed")
+	emit_signal("turn_done")
 	pass 
 
 
