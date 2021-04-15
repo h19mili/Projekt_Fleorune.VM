@@ -24,7 +24,7 @@ func _ready():
 
 func _process(delta):
 	if Input.is_action_just_pressed("ui_accept"):
-		#emit_signal("completed")
+		emit_signal("completed")
 		pass
 	if Input.is_action_just_pressed("ui_a"):
 		#emit_signal("emattack")

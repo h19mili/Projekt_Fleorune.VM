@@ -42,12 +42,12 @@ func play_turn():
 			#yield(select_arrow.select_target(battler), "completed")
 			select_arrow.select_target(targets)
 			yield(active_player, "completed")
+			Etarget = select_arrow.selected
 			Etarget.Current_HP -= active_player.CURRENT_DMG
 			print("Player End")
-			Etarget=select_arrow.selected
 
 		else:
-			#Battler_action = get_child(0)
+			Battler_action = get_child(0)
 			#yield(active_player, "emattack") # a
 			print("waiting for eneamy")
 			yield(Battler_action, "Attack_done")
