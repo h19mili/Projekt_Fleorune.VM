@@ -1,10 +1,8 @@
 extends YSort
 
 class_name TurnQ
-signal completed
 signal turn_done
 #signal Attack_done
-signal targets_selected(selected_target)
 var party : Array = []
 var Etarget
 #onready var Battler_action = $Battler_Action #Combataction
@@ -37,7 +35,6 @@ func play_turn():
 			print("NO TARGETS!! END!")
 		battler.my_turn(targets)
 		yield(battler,"turn_done")
-		print("JAG ÄR FÖRBI!!!")
 		battler.selected = false
 	
 		var new_index : int = (active_player.get_index() + 1) % get_child_count()

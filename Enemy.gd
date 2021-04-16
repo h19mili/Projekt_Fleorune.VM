@@ -21,8 +21,8 @@ func my_turn(targets):
 		Etarget = targets[1]
 		#yield(active_player, "emattack") # a
 		Attack()
-		Etarget.Current_HP -= CURRENT_DMG
 		yield(get_tree().create_timer(1.0), "timeout")
+		Etarget.Current_HP -= CURRENT_DMG
 		emit_signal("turn_done")
 	else:
 		print("ENEMY NO HP")

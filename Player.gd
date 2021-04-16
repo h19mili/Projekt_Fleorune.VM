@@ -32,5 +32,5 @@ func my_turn(targets):
 	return self
 
 func Attack():
-	if Current_HP > 0:
-		Etarget.Current_HP -= STR
+	if Current_HP > 0 && selected:
+		Etarget.Current_HP -= CURRENT_DMG

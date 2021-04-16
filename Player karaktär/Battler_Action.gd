@@ -1,7 +1,6 @@
 extends Node
 class_name Combataction
 
-signal Attack_done
 var Damage = 0
 var Attacker
 #onready var turnq : TurnQ

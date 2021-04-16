@@ -12,11 +12,15 @@ position = Vector2( 526, 273 )
 [node name="TurnQ" type="YSort" parent="."]
 script = ExtResource( 1 )
 
-[node name="David" parent="TurnQ" instance=ExtResource( 3 )]
+[node name="Player" parent="TurnQ" instance=ExtResource( 3 )]
 position = Vector2( -268.303, -1.335 )
 script = ExtResource( 2 )
 
-[node name="David2" parent="TurnQ" instance=ExtResource( 3 )]
+[node name="Enemy" parent="TurnQ" instance=ExtResource( 3 )]
+script = ExtResource( 5 )
+
+[node name="Enemy2" parent="TurnQ" instance=ExtResource( 3 )]
+position = Vector2( -156.9, -154.327 )
 script = ExtResource( 5 )
 
 [node name="Position2D" type="Position2D" parent="."]
