@@ -24,13 +24,9 @@ func _ready():
 
 func _process(delta):
 	if Input.is_action_just_pressed("ui_accept"):
-		#emit_signal("completed")
-		pass
+		emit_signal("completed")
 	if Input.is_action_just_pressed("ui_a"):
-		#emit_signal("emattack")
-		#emit_signal("Attack_done")
-		print("stop")
-		pass
+		emit_signal("emattack")
 	Attack()
 
 func set_selected(value):
@@ -66,10 +62,8 @@ func Attack():
 	if Party_member == false:
 		if selected == true:
 			CURRENT_DMG = get_node("Battler_Action").Attack_action()
-			#emit_signal("emattack")
-			emit_signal("Attack_done")
+			emit_signal("emattack")
 			print("Attack")
-			print("hi")
 
 
 

@@ -24,6 +24,8 @@ texture = ExtResource( 4 )
 script = ExtResource( 2 )
 statblock = ExtResource( 3 )
 
+[node name="Skills" type="Node" parent="Job"]
+
 [node name="Healthbar" type="TextureProgress" parent="."]
 margin_left = -30.0
 margin_top = 15.0
