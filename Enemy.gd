@@ -17,8 +17,7 @@ func _ready():
 #	pass
 func my_turn(targets):
 	if Current_HP > 0:
-		var Etarget : Battler
-		Etarget = targets[1]
+		var Etarget : Battler = choose_target(targets)
 		#yield(active_player, "emattack") # a
 		Attack()
 		yield(get_tree().create_timer(1.0), "timeout")
@@ -27,3 +26,11 @@ func my_turn(targets):
 	else:
 		print("ENEMY NO HP")
 	return self
+
+func choose_target(sort_valid):
+	for i in sort_valid:
+		if i.name == "Player":
+			print("found player")
+			return i
+		else:
+			print("NO PLAYER FOUND!!")

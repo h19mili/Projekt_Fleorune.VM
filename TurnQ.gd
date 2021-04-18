@@ -10,11 +10,12 @@ onready var active_player = Battler
 onready var select_arrow = get_node("../Arrow")
 
 func _ready():
-	Etarget = get_child(1)
-	initialize()
+	#Etarget = get_child(1)
+	#initialize()
 	pass
 
 func initialize():
+	Etarget = get_child(1)
 	var Battlers = get_players()
 	#for i in Battlers:
 		#if i.Party_member == true:
@@ -64,6 +65,3 @@ func get_players():
 func _Done():
 	emit_signal("turn_done")
 	pass 
-
-
-
