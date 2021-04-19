@@ -23,7 +23,6 @@ func _process(delta):
 #	pass
 func my_turn(targets):
 	CURRENT_DMG = get_node("Battler_Action").Attack_action()
-	print("Player Turn")
 	if Current_HP > 0:
 		if not targets:
 			print("End")

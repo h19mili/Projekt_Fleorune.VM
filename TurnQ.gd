@@ -50,7 +50,7 @@ func play_turn():
 
 
 static func sort_players(a : Battler, b : Battler) -> bool:
-	return a.Speed > b.Speed
+	return a.Speed < b.Speed
 
 func _next_battler():
 	var new_index : int = (active_player.get_index() + 1) % get_child_count()

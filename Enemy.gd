@@ -16,6 +16,8 @@ func _ready():
 #func _process(delta):
 #	pass
 func my_turn(targets):
+	print("SPEED ENEMY")
+	print(Speed)
 	if Current_HP > 0:
 		var Etarget : Battler = choose_target(targets)
 		#yield(active_player, "emattack") # a
@@ -29,7 +31,7 @@ func my_turn(targets):
 
 func choose_target(sort_valid):
 	for i in sort_valid:
-		if i.name == "Player":
+		if i.Party_member:
 			print("found player")
 			return i
 		else:
