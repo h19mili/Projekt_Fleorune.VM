@@ -15,6 +15,11 @@ _global_script_classes=[ {
 "path": "res://Battler.gd"
 }, {
 "base": "Node",
+"class": "Characterskills",
+"language": "GDScript",
+"path": "res://Player karaktär/Characterskills.gd"
+}, {
+"base": "Node",
 "class": "Combataction",
 "language": "GDScript",
 "path": "res://Player karaktär/Battler_Action.gd"
@@ -25,9 +30,9 @@ _global_script_classes=[ {
 "path": "res://Job.gd"
 }, {
 "base": "Resource",
-"class": "Skill",
+"class": "Skillcraft",
 "language": "GDScript",
-"path": "res://Skills/Skill.gd"
+"path": "res://Skills/Skillcraft.gd"
 }, {
 "base": "Resource",
 "class": "Statblock",
@@ -41,9 +46,10 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "Battler": "",
+"Characterskills": "",
 "Combataction": "",
 "Job": "",
-"Skill": "",
+"Skillcraft": "",
 "Statblock": "",
 "TurnQ": ""
 }
@@ -51,7 +57,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Projekt Fleorune.VM"
-run/main_scene="res://Main.tscn"
+run/main_scene="res://Test_combat.tscn"
 config/icon="res://icon.png"
 
 [input]

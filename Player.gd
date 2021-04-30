@@ -1,7 +1,6 @@
 extends Battler
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text",
+
+
 var Etarget : Battler
 onready var select_arrow = get_node("../../Arrow")
 # Called when the node enters the scene tree for the first time.
@@ -20,7 +19,7 @@ func _process(delta):
 	pass
 	
 	
-#	pass
+
 func my_turn(targets):
 	CURRENT_DMG = get_node("Battler_Action").Attack_action()
 	if Current_HP > 0:
