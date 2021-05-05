@@ -24,6 +24,9 @@ func _physics_process(delta):
 	get_input()
 	velocity = move_and_slide(velocity)
 	
-	
+	if get_tree().get_current_scene().get_name() == "Game":
+		get_node("Healthbar").hide()
+		get_node("Sprite2").hide()
+		get_node("Exphandler").hide()
 	
 	

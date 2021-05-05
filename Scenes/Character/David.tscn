@@ -1,18 +1,27 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scripts/Character/David.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Job.gd" type="Script" id=2]
 [ext_resource path="res://Resources/knight.tres" type="Resource" id=3]
-[ext_resource path="res://Assets/Graphical/icon.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Graphical/MC_Sprite_ONE.png" type="Texture" id=4]
 [ext_resource path="res://Scripts/Character/Exphandler.gd" type="Script" id=5]
-[ext_resource path="res://Assets/Graphical/bar(2).png" type="Texture" id=6]
-[ext_resource path="res://Assets/Graphical/bar(1).png" type="Texture" id=7]
+[ext_resource path="res://Assets/Graphical/HEALTHBAR.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Graphical/ASDASDASDASDASDASDASD.png" type="Texture" id=7]
 [ext_resource path="res://Global/Scripts/Healthbar.gd" type="Script" id=8]
 
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 6.06907, 5.63568 )
+extents = Vector2( 7.26891, 9.15093 )
 
 [node name="David" type="KinematicBody2D"]
+position = Vector2( -0.496063, 0.198425 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
@@ -22,15 +31,19 @@ __meta__ = {
 script = ExtResource( 2 )
 statblock = ExtResource( 3 )
 
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 0.29829, 14.96 )
+scale = Vector2( 0.579601, 0.548985 )
+texture = ExtResource( 7 )
+
 [node name="Healthbar" type="TextureProgress" parent="."]
-margin_left = -15.1608
-margin_top = -1.30371
-margin_right = 48.8392
-margin_bottom = 62.6963
+margin_left = -15.8985
+margin_top = 10.6468
+margin_right = 85.1015
+margin_bottom = 39.6468
 rect_scale = Vector2( 0.5, 0.5 )
 value = 10.0
-texture_under = ExtResource( 6 )
-texture_progress = ExtResource( 7 )
+texture_progress = ExtResource( 6 )
 script = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -51,9 +64,15 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.195134, 0.176479 )
+frames = SubResource( 2 )
+animation = "New Anim"
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.851136, 0.748977 )
 texture = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.353554, 0.176777 )
 shape = SubResource( 1 )

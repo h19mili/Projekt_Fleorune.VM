@@ -26,6 +26,7 @@ script = ExtResource( 2 )
 statblock = ExtResource( 3 )
 
 [node name="Healthbar" type="TextureProgress" parent="."]
+visible = false
 margin_left = -30.0
 margin_top = 15.0
 margin_right = 34.0
