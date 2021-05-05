@@ -36,3 +36,6 @@ func choose_target(sort_valid):
 			return i
 		else:
 			print("NO PLAYER FOUND!!")
+
+func monster_attack(targets):
+	pass

@@ -9,6 +9,7 @@ var selected : bool = false setget set_selected
 var selectable : bool = false setget set_selectable
 export var Party_member = false
 onready var target_global_position = self.global_position
+onready var bars = $Bars
 
 var Max_HP : int
 var Current_HP : int
@@ -21,6 +22,7 @@ var CURRENT_DMG : int
 func _ready():
 	init(Max_HP, Current_HP)
 	selectable = true
+	
 	pass
 
 func _process(delta):
@@ -69,7 +71,8 @@ func Attack():
 			print("Enemy Attack")
 
 
-func my_turn(targets):
+func Boxlista():
+	bars
 	pass
 
 

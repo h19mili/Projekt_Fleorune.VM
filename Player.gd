@@ -2,6 +2,7 @@ extends Battler
 
 
 var Etarget : Battler
+onready var Mana = get_node("Mana_bar")
 onready var select_arrow = get_node("../../Arrow")
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -32,3 +33,21 @@ func my_turn(targets):
 func Attack():
 	if Current_HP > 0 && selected:
 		Etarget.Current_HP -= CURRENT_DMG
+
+
+func Fireball_Button():
+	if selected == true:
+		Etarget = select_arrow.active_target
+		Etarget.Current_HP -= 7
+		Mana.Current_mana -= 5
+		Mana._Manabar()
+		emit_signal("turn_done")
+	pass
+
+
+func Basic_AtkButton():
+	if selected == true:
+		Etarget = select_arrow.active_target
+		Etarget.Current_HP -= 4
+		emit_signal("turn_done")
+	pass

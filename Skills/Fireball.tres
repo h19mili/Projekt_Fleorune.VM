@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource( 1 )
-Skill_name = "firecall"
+Skill_name = "fireball"
 Skill_text = "A ball of fire"
 mana_cost = 5
 base_damage = 10

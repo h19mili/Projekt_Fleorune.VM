@@ -4,7 +4,7 @@ class_name Job
 
 onready var stats = get_node("..")
 onready var skills = $Skills
-export(Array) var Starting_skills #= ["res://Skills/Fireball.tres"]
+export(Array) var Starting_skills
 var skilllista = []
 export(PackedScene) var character_skills_scene : PackedScene
 
