@@ -9,4 +9,5 @@ export var Max_Mana : int
 export var Speed : int
 export var STR : int 
 export var DEF : int
+export var Magic : int
 

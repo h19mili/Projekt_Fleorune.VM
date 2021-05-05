@@ -4,6 +4,7 @@ class_name Job
 
 onready var stats = get_node("..")
 onready var skills = $Skills
+onready var bars = get_node("../Bars")
 export(Array) var Starting_skills
 var skilllista = []
 export(PackedScene) var character_skills_scene : PackedScene
@@ -16,4 +17,5 @@ func _ready():
 			var new_skill = character_skills_scene.instance()
 			new_skill.initialize(skill, Skillcraft)
 			skills.add_child(new_skill)
+			bars.add_child(new_skill)
 	pass 

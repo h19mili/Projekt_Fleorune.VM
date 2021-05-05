@@ -18,6 +18,7 @@ var Speed : int
 var STR : int
 var DEF : int
 var CURRENT_DMG : int
+var Magic : int
 
 func _ready():
 	init(Max_HP, Current_HP)
@@ -61,6 +62,7 @@ func character(stats : Statblock):
 	DEF = stats.DEF
 	Speed = stats.Speed
 	Current_HP = Max_HP
+	Magic = stats.Magic
 
 func Attack():
 	if Party_member == false:

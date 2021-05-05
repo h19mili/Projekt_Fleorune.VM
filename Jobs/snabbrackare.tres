@@ -9,5 +9,6 @@ Max_HP = 50
 Current_HP = 50
 Max_Mana = 50
 Speed = 1000
-STR = 5
+STR = 8
 DEF = 1
+Magic = 11

@@ -6,11 +6,14 @@ onready var Mana = get_node("Mana_bar")
 onready var select_arrow = get_node("../../Arrow")
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	get_node("Button").hide()
+	get_node("Button2").hide()
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	Show_button()
 	if Input.is_action_just_pressed("ui_accept"):
 		Etarget = select_arrow.active_target
 		if Etarget:
@@ -38,16 +41,25 @@ func Attack():
 func Fireball_Button():
 	if selected == true:
 		Etarget = select_arrow.active_target
-		Etarget.Current_HP -= 7
-		Mana.Current_mana -= 5
+		Etarget.Current_HP -= Magic
+		Mana.Current_mana -= 7
 		Mana._Manabar()
 		emit_signal("turn_done")
+		get_node("Button").hide()
+		get_node("Button2").hide()
 	pass
 
 
 func Basic_AtkButton():
 	if selected == true:
 		Etarget = select_arrow.active_target
-		Etarget.Current_HP -= 4
+		Etarget.Current_HP -= STR
 		emit_signal("turn_done")
+		get_node("Button2").hide()
+		get_node("Button").hide()
 	pass
+
+func Show_button():
+	if selected == true:
+		get_node("Button").show()
+		get_node("Button2").show()
