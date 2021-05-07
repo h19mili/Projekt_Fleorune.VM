@@ -1,0 +1,13 @@
+{ "name":"", "text":""},
+
+"004":[
+	{ "name":"You", "text":">I'm glad i didn't run into any other problems and now i can sell this wolf pelt."},
+	{ "name":"Shopkeep", "text":"Hello sir what can i do for you today."},
+	{ "name":"You", "text":"hi i have vegetables and a wolf pelt to sell."},
+	{ "name":"Shopkeep", "text":"Good here you go sir, impressive kill. Not all people can handle themselves out there."}]
+
+"00x":[
+	{ "name":"", "text":""},
+	{ "name":"", "text":""},
+	{ "name":"", "text":""},
+	{ "name":"", "text":""}]
