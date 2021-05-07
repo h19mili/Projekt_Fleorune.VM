@@ -8,27 +8,75 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Node2D",
+"class": "Battler",
+"language": "GDScript",
+"path": "res://Global/Scripts/Battler.gd"
+}, {
+"base": "Node",
+"class": "Characterskills",
+"language": "GDScript",
+"path": "res://Player/Characterskills.gd"
+}, {
+"base": "Node",
+"class": "Combataction",
+"language": "GDScript",
+"path": "res://Player/Battler_Action.gd"
+}, {
+"base": "Battler",
+"class": "Enemy",
+"language": "GDScript",
+"path": "res://Enemy.gd"
+}, {
+"base": "Node",
+"class": "Job",
+"language": "GDScript",
+"path": "res://Scripts/Job.gd"
+}, {
+"base": "Resource",
+"class": "Skillcraft",
+"language": "GDScript",
+"path": "res://Skills/Skillcraft.gd"
+}, {
+"base": "Resource",
+"class": "Statblock",
+"language": "GDScript",
+"path": "res://Global/Scripts/Statblock.gd"
+}, {
+"base": "YSort",
+"class": "TurnQ",
+"language": "GDScript",
+"path": "res://Global/Scripts/TurnQ.gd"
+} ]
 _global_script_class_icons={
-
+"Battler": "",
+"Characterskills": "",
+"Combataction": "",
+"Enemy": "",
+"Job": "",
+"Skillcraft": "",
+"Statblock": "",
+"TurnQ": ""
 }
 
 [application]
 
-config/name="Life-of-Fleorune"
-run/main_scene="res://Scenes/Menu/Main.tscn"
+config/name="Projekt Fleorune.VM"
+run/main_scene="res://Global/Scenes/Game.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
-Options="*res://Globals/Options.tscn"
+GlobalData="*res://Global/Scripts/Global_data.gd"
 
-[display]
+[input]
 
-window/size/width=1920
-window/size/height=1080
-window/stretch/mode="2d"
-window/stretch/aspect="expand"
+ui_a={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":65,"unicode":0,"echo":false,"script":null)
+ ]
+}
 
 [rendering]
 

@@ -1,0 +1,81 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Jobs/knight.tres" type="Resource" id=1]
+[ext_resource path="res://Art/bar(2).png" type="Texture" id=2]
+[ext_resource path="res://Assets/Graphical/icon.png" type="Texture" id=3]
+[ext_resource path="res://Art/bar(1).png" type="Texture" id=4]
+[ext_resource path="res://Player/Battler_Action.gd" type="Script" id=5]
+[ext_resource path="res://Enemy.gd" type="Script" id=6]
+[ext_resource path="res://Player/Exphandler.gd" type="Script" id=7]
+[ext_resource path="res://Player/Healthbar.gd" type="Script" id=8]
+[ext_resource path="res://Scripts/Job.gd" type="Script" id=9]
+[ext_resource path="res://Player/Mana_bar.gd" type="Script" id=10]
+
+[node name="Enemy2" type="Node2D"]
+position = Vector2( -156.9, -154.327 )
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 3 )
+
+[node name="Job" type="Node" parent="."]
+script = ExtResource( 9 )
+statblock = ExtResource( 1 )
+
+[node name="Healthbar" type="TextureProgress" parent="."]
+margin_left = -30.0
+margin_top = 15.0
+margin_right = 34.0
+margin_bottom = 79.0
+value = 10.0
+texture_under = ExtResource( 2 )
+texture_progress = ExtResource( 4 )
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Healthnumber" type="Label" parent="Healthbar"]
+margin_left = 61.8502
+margin_top = 14.315
+margin_right = 79.8502
+margin_bottom = 28.315
+text = "70"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Mana_bar" type="TextureProgress" parent="."]
+margin_left = -30.0
+margin_top = 25.0
+margin_right = 34.0
+margin_bottom = 89.0
+value = 10.0
+texture_under = ExtResource( 2 )
+texture_progress = ExtResource( 4 )
+tint_progress = Color( 0, 0.862745, 0.133333, 0.603922 )
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Exphandler" type="Node2D" parent="."]
+script = ExtResource( 7 )
+
+[node name="Level_number" type="Label" parent="Exphandler"]
+margin_left = 15.0
+margin_top = -25.0
+margin_right = 55.0
+margin_bottom = -11.0
+text = "1"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Battler_Action" type="Node" parent="."]
+script = ExtResource( 5 )
