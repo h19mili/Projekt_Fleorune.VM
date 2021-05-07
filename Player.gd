@@ -6,8 +6,9 @@ onready var Mana = get_node("Mana_bar")
 onready var select_arrow = get_node("../../Arrow")
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	get_node("Button").hide()
-	get_node("Button2").hide()
+	get_node("Fireball").hide()
+	get_node("Attack").hide()
+	get_node("Heal").hide()
 	pass # Replace with function body.
 
 
@@ -45,8 +46,9 @@ func Fireball_Button():
 		Mana.Current_mana -= 7
 		Mana._Manabar()
 		emit_signal("turn_done")
-		get_node("Button").hide()
-		get_node("Button2").hide()
+		get_node("Fireball").hide()
+		get_node("Attack").hide()
+		get_node("Heal").hide()
 	pass
 
 
@@ -55,11 +57,24 @@ func Basic_AtkButton():
 		Etarget = select_arrow.active_target
 		Etarget.Current_HP -= STR
 		emit_signal("turn_done")
-		get_node("Button2").hide()
-		get_node("Button").hide()
+		get_node("Fireball").hide()
+		get_node("Attack").hide()
+		get_node("Heal").hide()
 	pass
 
 func Show_button():
 	if selected == true:
-		get_node("Button").show()
-		get_node("Button2").show()
+		get_node("Fireball").show()
+		get_node("Attack").show()
+		get_node("Heal").show()
+
+
+func Heal_pressed():
+	if selected == true:
+		Etarget = select_arrow.active_target
+		Etarget.Current_HP += Magic
+		emit_signal("turn_done")
+		get_node("Fireball").hide()
+		get_node("Attack").hide()
+		get_node("Heal").hide()
+	pass 

@@ -13,6 +13,9 @@ func _Healthbar():
 	self.value = Max_HP.Current_HP
 	Text_health=str(value)
 	get_node("Healthnumber").set_text(Text_health)
+	if Max_HP.Current_HP > Max_HP.Max_HP:
+		Max_HP.Current_HP = Max_HP.Max_HP
+		print("Full HP")
 	pass
  
 
