@@ -12,22 +12,27 @@ _global_script_classes=[ {
 "base": "Node2D",
 "class": "Battler",
 "language": "GDScript",
-"path": "res://Battler.gd"
+"path": "res://Global/Scripts/Battler.gd"
 }, {
 "base": "Node",
 "class": "Characterskills",
 "language": "GDScript",
-"path": "res://Player karaktär/Characterskills.gd"
+"path": "res://Player/Characterskills.gd"
 }, {
 "base": "Node",
 "class": "Combataction",
 "language": "GDScript",
-"path": "res://Player karaktär/Battler_Action.gd"
+"path": "res://Player/Battler_Action.gd"
+}, {
+"base": "Battler",
+"class": "Enemy",
+"language": "GDScript",
+"path": "res://Enemy.gd"
 }, {
 "base": "Node",
 "class": "Job",
 "language": "GDScript",
-"path": "res://Job.gd"
+"path": "res://Scripts/Job.gd"
 }, {
 "base": "Resource",
 "class": "Skillcraft",
@@ -37,17 +42,18 @@ _global_script_classes=[ {
 "base": "Resource",
 "class": "Statblock",
 "language": "GDScript",
-"path": "res://Jobs/Statblock.gd"
+"path": "res://Global/Scripts/Statblock.gd"
 }, {
 "base": "YSort",
 "class": "TurnQ",
 "language": "GDScript",
-"path": "res://TurnQ.gd"
+"path": "res://Global/Scripts/TurnQ.gd"
 } ]
 _global_script_class_icons={
 "Battler": "",
 "Characterskills": "",
 "Combataction": "",
+"Enemy": "",
 "Job": "",
 "Skillcraft": "",
 "Statblock": "",
@@ -57,8 +63,12 @@ _global_script_class_icons={
 [application]
 
 config/name="Projekt Fleorune.VM"
-run/main_scene="res://Test_combat.tscn"
+run/main_scene="res://Global/Scenes/Game.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+GlobalData="*res://Global/Scripts/Global_data.gd"
 
 [input]
 

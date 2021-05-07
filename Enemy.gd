@@ -1,5 +1,5 @@
 extends Battler
-
+class_name Enemy
 
 # Declare member variables here. Examples:
 # var a = 2

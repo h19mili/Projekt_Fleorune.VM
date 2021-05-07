@@ -1,4 +1,4 @@
-extends "res://Global/Scripts/Battler.gd"
+extends Enemy
 
 func _ready():
 	pass

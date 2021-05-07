@@ -1,29 +1,96 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=21 format=2]
 
-[ext_resource path="res://Scripts/Enemies/Wolf.gd" type="Script" id=1]
-[ext_resource path="res://Scripts/Job.gd" type="Script" id=2]
-[ext_resource path="res://Resources/Bandit.tres" type="Resource" id=3]
-[ext_resource path="res://Assets/Graphical/Bandit.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Graphical/bar(2).png" type="Texture" id=6]
-[ext_resource path="res://Assets/Graphical/bar(1).png" type="Texture" id=7]
-[ext_resource path="res://Global/Scripts/Healthbar.gd" type="Script" id=8]
+[ext_resource path="res://Jobs/knight.tres" type="Resource" id=1]
+[ext_resource path="res://Art/bar(2).png" type="Texture" id=2]
+[ext_resource path="res://Assets/Graphical/GFX_Wolf_Sprites.png" type="Texture" id=3]
+[ext_resource path="res://Art/bar(1).png" type="Texture" id=4]
+[ext_resource path="res://Player/Battler_Action.gd" type="Script" id=5]
+[ext_resource path="res://Scripts/Enemies/ScenechangeScript.gd" type="Script" id=6]
+[ext_resource path="res://Player/Exphandler.gd" type="Script" id=7]
+[ext_resource path="res://Player/Healthbar.gd" type="Script" id=8]
+[ext_resource path="res://Scripts/Job.gd" type="Script" id=9]
+[ext_resource path="res://Player/Mana_bar.gd" type="Script" id=10]
 
-[node name="Bandit" type="KinematicBody2D"]
-position = Vector2( 748.119, 328.098 )
-script = ExtResource( 1 )
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 39, 66, 39 )
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 66, 39, 66, 39 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 132, 39, 66, 39 )
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 198, 39, 66, 39 )
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 66, 39 )
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 66, 0, 66, 39 )
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 132, 0, 66, 39 )
+
+[sub_resource type="AtlasTexture" id=8]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 198, 0, 66, 39 )
+
+[sub_resource type="AtlasTexture" id=9]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 264, 0, 66, 39 )
+
+[sub_resource type="SpriteFrames" id=10]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
+"loop": true,
+"name": "Attack",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 5 ), SubResource( 6 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ],
+"loop": false,
+"name": "Death",
+"speed": 5.0
+} ]
+
+[node name="Bandit" type="Node2D"]
+position = Vector2( -0.00771236, 0.00708008 )
+script = ExtResource( 6 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Skin" type="Sprite" parent="."]
-position = Vector2( -15.7051, -47.069 )
-scale = Vector2( 0.137014, 0.148341 )
-texture = ExtResource( 4 )
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 10 )
+animation = "Death"
+frame = 2
+playing = true
 flip_h = true
 
 [node name="Job" type="Node" parent="."]
-script = ExtResource( 2 )
-statblock = ExtResource( 3 )
+script = ExtResource( 9 )
+statblock = ExtResource( 1 )
 
 [node name="Healthbar" type="TextureProgress" parent="."]
 visible = false
@@ -32,9 +99,53 @@ margin_top = 15.0
 margin_right = 34.0
 margin_bottom = 79.0
 value = 10.0
-texture_under = ExtResource( 6 )
-texture_progress = ExtResource( 7 )
+texture_under = ExtResource( 2 )
+texture_progress = ExtResource( 4 )
 script = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Healthnumber" type="Label" parent="Healthbar"]
+margin_left = 61.8502
+margin_top = 14.315
+margin_right = 79.8502
+margin_bottom = 28.315
+text = "70"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Mana_bar" type="TextureProgress" parent="."]
+visible = false
+margin_left = -30.0
+margin_top = 25.0
+margin_right = 34.0
+margin_bottom = 89.0
+value = 10.0
+texture_under = ExtResource( 2 )
+texture_progress = ExtResource( 4 )
+tint_progress = Color( 0, 0.862745, 0.133333, 0.603922 )
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Exphandler" type="Node2D" parent="."]
+visible = false
+script = ExtResource( 7 )
+
+[node name="Level_number" type="Label" parent="Exphandler"]
+margin_left = 15.0
+margin_top = -25.0
+margin_right = 55.0
+margin_bottom = -11.0
+text = "1"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Battler_Action" type="Node" parent="."]
+script = ExtResource( 5 )
