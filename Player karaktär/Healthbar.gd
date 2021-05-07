@@ -16,7 +16,6 @@ func _Healthbar():
 	if Max_HP.Current_HP > Max_HP.Max_HP:
 		Max_HP.Current_HP = Max_HP.Max_HP
 		print("Full HP")
-	pass
  
 
 func _process(delta):
