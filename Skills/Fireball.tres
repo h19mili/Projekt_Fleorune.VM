@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Skills/Skillcraft.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+Skill_name = "fireball"
+Skill_text = "A ball of fire"
+mana_cost = 5
+base_damage = 10
+fire_damage = 0
+Hit_chance = 0.75

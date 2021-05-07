@@ -9,29 +9,47 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "KinematicBody2D",
+"base": "Node2D",
 "class": "Battler",
 "language": "GDScript",
-"path": "res://Global/Scripts/Battler.gd"
+"path": "res://Battler.gd"
+}, {
+"base": "Node",
+"class": "Characterskills",
+"language": "GDScript",
+"path": "res://Player karaktär/Characterskills.gd"
+}, {
+"base": "Node",
+"class": "Combataction",
+"language": "GDScript",
+"path": "res://Player karaktär/Battler_Action.gd"
 }, {
 "base": "Node",
 "class": "Job",
 "language": "GDScript",
-"path": "res://Scripts/Job.gd"
+"path": "res://Job.gd"
+}, {
+"base": "Resource",
+"class": "Skillcraft",
+"language": "GDScript",
+"path": "res://Skills/Skillcraft.gd"
 }, {
 "base": "Resource",
 "class": "Statblock",
 "language": "GDScript",
-"path": "res://Global/Scripts/Statblock.gd"
+"path": "res://Jobs/Statblock.gd"
 }, {
 "base": "YSort",
 "class": "TurnQ",
 "language": "GDScript",
-"path": "res://Global/Scripts/TurnQ.gd"
+"path": "res://TurnQ.gd"
 } ]
 _global_script_class_icons={
 "Battler": "",
+"Characterskills": "",
+"Combataction": "",
 "Job": "",
+"Skillcraft": "",
 "Statblock": "",
 "TurnQ": ""
 }
@@ -39,37 +57,14 @@ _global_script_class_icons={
 [application]
 
 config/name="Projekt Fleorune.VM"
-run/main_scene="res://Global/Scenes/Game.tscn"
+run/main_scene="res://Test_combat.tscn"
 config/icon="res://icon.png"
-
-[autoload]
-
-GlobalData="*res://Global/Scripts/Global_data.gd"
 
 [input]
 
-ui_left={
+ui_a={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":65,"unicode":0,"echo":false,"script":null)
-, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":14,"pressure":0.0,"pressed":false,"script":null)
- ]
-}
-ui_right={
-"deadzone": 0.5,
-"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":68,"unicode":0,"echo":false,"script":null)
-, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":15,"pressure":0.0,"pressed":false,"script":null)
- ]
-}
-ui_up={
-"deadzone": 0.5,
-"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":87,"unicode":0,"echo":false,"script":null)
-, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":12,"pressure":0.0,"pressed":false,"script":null)
- ]
-}
-ui_down={
-"deadzone": 0.5,
-"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":83,"unicode":0,"echo":false,"script":null)
-, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":13,"pressure":0.0,"pressed":false,"script":null)
  ]
 }
 
