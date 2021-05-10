@@ -1,6 +1,111 @@
 {
 	"001":[
-		{ "name":"Guy1", "text":"Hello what are you doing?"},
-		{ "name":"Guy2", "text":"I'm stealing all your chickens"},
-		{ "name":"Guy1", "text":"Noooo, not my chickens!!!"}]
+		{ "name":"", "text":"*Knock Knock Knock*"},
+		{ "name":"Charlotte", "text":"Wake up you can't sleep in there all day."},
+		{ "name":"You", "text":"Soon mom i'm still tired."},
+		{ "name":"Charlotte", "text":"No today you have an important mission today."},
+		{ "name":"You", "text":"…"},
+		{ "name":"Charlotte", "text":"Now or should I get your father?"},
+		{ "name":"You", "text":"No.. *Walks out of the room* so what is this mission you speak of?"},
+		{ "name":"Charlotte", "text":"It's time to sell some of the vegetables in the city and you will be the one selling them."},
+		{ "name":"You", "text":"Okay mom"},
+		{ "name":"Charlotte", "text":"Love you have a safe trip"}],
+		
+	"002":[
+		{ "name":"You", "text":"Hi dad"},
+		{ "name":"", "text":"You see him loading a cart with boxes"},
+		{ "name":"Oliver", "text":"Hi i'm just about finished here so you can get on your way to the city."},
+		{ "name":"Oliver", "text":"Now when you're on the road keep an eye out for trouble."},
+		{ "name":"You", "text":"Yes dad i know i will be careful"}],
+		
+	"003":[
+		{ "name":"", "text":"*Howl*"},
+		{ "name":"You", "text":"What was that?"},
+		{ "name":"Wolf", "text":"*Growls*"},
+		{ "name":"You", "text":"Oh no a wolf, weird it looks to be alone"},
+		{ "name":"You", "text":"I hope i can kill it."},
+		{ "name":"You", "text":"I hope there won't be any more problems."}],
+
+	"004":[
+		{ "name":"You", "text":"I'm glad i didn't run into any other problems and now i can sell this wolf pelt."},
+		{ "name":"", "text":"You enter the shop"},
+		{ "name":"Shopkeep", "text":"Hello sir what can i do for you today."},
+		{ "name":"You", "text":"hi i have vegetables and a wolf pelt to sell."},
+		{ "name":"Shopkeep", "text":"Good here you go sir, impressive kill. Not all people can handle themselves out there."}],
+		
+	"005":[
+		{ "name":"", "text":"You see your village in flames"},
+		{ "name":"You", "text":"No what is this please no."},
+		{ "name":"", "text":"You see the bodies of several dead villagers scattered around the village."},
+		{ "name":"You", "text":"Maybe they survived. *You run home*" },
+		{ "name":"", "text":"You see more bodies as you reach you house, you go to open the door."},
+		{ "name":"", "text":"You are met with the horrific visual of your father impaled to the wall, and your mothers lifeless body lying on the ground."},
+		{ "name":"", "text":"You run over to your mother and cradle her lifeless body"},
+		{ "name":"You", "text":"No please gods no why"},
+		{ "name":"", "text":"You stand over graves you made for your parents"},
+		{ "name":"You", "text":"I need to go and get some help from the lord. I swear to both of you I will get justice for this and the bandits will not go unpunished."}],
+
+	"006":[
+		{ "name":"", "text":"You arive at the gates of the town, and walk up to the guards"},
+		{ "name":"You", "text":"I need to speke to the lord. I have urgent news."},
+		{ "name":"Guard 1", "text":"The lord is busy right now present so run along."},
+		{ "name":"You", "text":"Please sir I have to see him. It is important."},
+		{ "name":"Guard 1", "text":"Listen kid the lord has a lot on his plate and he doesn't ne-"},
+		{ "name":"Guard 2", "text":"Come on he might have news the lord would like to hear let take him there."},
+		{ "name":"Guard 1", "text":"*sigh* Fine but you will buy me a drink later."}],
+		
+	"007":[
+		{ "name":"", "text":"You enter the lords hall"},
+		{ "name":"Lord Erok", "text":"And then we position… hello young man."},
+		{ "name":"You", "text":"Hi my lord I come from the village south of the city cald Karion. My village has been attacked."},
+		{ "name":"Lord Erok", "text":"Who attacked this village was it Estrace soldiers."},
+		{ "name":"You", "text":"No my lord it was bandits."},
+		{ "name":"Lord Erok", "text":"Okay but we can't just give our soldiers when we are in need of protecting our border."},
+		{ "name":"Lord Erok", "text":"Listen boy we are in a potential crisis but I understand your struggle and I am sorry about your village."},
+		{ "name":"Thinking", "text":"He understands how could he ever understand"},
+		{ "name":"You", "text":"My lord if you truly understand my problem you would send some men to deal with the problem. I'm not asking for an army."},
+		{ "name":"Lord Erok", "text":"I think you should leave."},
+		{ "name":"", "text":"You are escorted out of the hall."}],
+		
+	"008":[
+		{ "name":"Shopkeep", "text":"Sir i was robbed near xxxx woods and i need help recovering my son and my wagon."},
+		{ "name":"Guard 1", "text":"We will look into it as soon as possible."},
+		{ "name":"Shopkeep", "text":"Please sir they have my son you need to help now i beg you."},
+		{ "name":"Guard 2", "text":"Sir we are very busy and we can't leave the city every time someone has a problem."},
+		{ "name":"Shopkeep", "text":"Its my son please he-"},
+		{ "name":"Guard 1", "text":"Move along sir."},
+		{ "name":"Shopkeep", "text":"Sobbs"}],
+		
+	"009":[
+		{ "name":"", "text":"You are walking in the woods of xxxx and you find a campfire  and a body of a small child beaten to death he old be no more than eleven. The ground is still warm so they must be close. I have to find them."},
+		{ "name":"", "text":"You find a map of bandit bases."}],
+		
+	"010":[
+		{ "name":"You", "text":"Finally after all those bases i have found where the boss is, my revenge will be complete but what will I do after it is finished? I hope I can settle down on a farm like my mom and dad."}],
+
+	"011":[
+		{ "name":"Bandit Boss", "text":"How did you get in here? How did you get past the guards?"},
+		{ "name":"You", "text":"Your guards are dead and I am here to kill you."},
+		{ "name":"Bandit Boss", "text":"But you're just a kid no older than 20. Who sent you whas it Lord Erok?"},
+		{ "name":"You", "text":"No i am here for revenge you killed my parents my family my village everyone i ever know."},
+		{ "name":"Bandit Boss", "text":"What just simple revenge nothing more."},
+		{ "name":"You", "text":"No."},
+		{ "name":"Bandit Boss", "text":"Well if this is the end of your revenge but i think you deserve a name on your revenge. My name is Floyd, what is your name."},
+		{ "name":"You", "text":"You can call me by my family name Mercer and my village is Karion."},
+		{ "name":"Floyd", "text":"I think you mean was."},
+		{ "name":"You", "text":"What?"},
+		{ "name":"Floyd", "text":"Well your village was destroyed."},
+		{ "name":"You", "text":"*Screams* AAAAA I WILL KILL YOU"}],
+		
+	"012":[
+		{ "name":"", "text":"You stand over Floyd ready to kill."},
+		{ "name":"Floyd", "text":"Y..you think this will end with me then you are a fool."},
+		{ "name":"You", "text":"I don't know but it will feel a lot better."},
+		{ "name":"Floyd", "text":"Well then do what y……"},
+		{ "name":"", "text":"You slit his throat."},
+		{ "name":"You", "text":"Finally done."},
+		{ "name":"You", "text":"Well let's see what he has on him"},
+		{ "name":"", "text":"You find some money and a parchment with orders to destroy villages so the army has less food and its signed by General Rion of Estrace."},
+		{ "name":"You", "text":"I have to warn the lord."},
+		{ "name":"", "text":"End of update 0.1"}]
 }
