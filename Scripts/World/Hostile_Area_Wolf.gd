@@ -8,11 +8,11 @@ var enemies : Array = []
 func _process(delta):
 	if rull == 1:
 		Global.playerpos=Spelare.position
-		#get_tree().change_scene("res://Scenes/Enemies/Wolf.tscn")
+		#get_tree().change_scene("res://Scenes/Enemies/Bandit.tscn")
 		var NoOfEnemies = randi() % 3+1
 		for i in range(NoOfEnemies):
 			enemies.append("res://Scenes/Enemies/Wolf.tscn")
 		get_tree().get_root().add_child(scene)
 		scene.start_battle(enemies) # init root node
 		get_tree().set_current_scene(scene)
-		get_node("/root/Game").queue_free()
+		queue_free()
