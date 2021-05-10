@@ -15,4 +15,4 @@ func _process(delta):
 		get_tree().get_root().add_child(scene)
 		scene.start_battle(enemies) # init root node
 		get_tree().set_current_scene(scene)
-		queue_free()
+		get_node("/root/Game").queue_free()

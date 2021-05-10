@@ -12,7 +12,7 @@ func _process(delta_):
 		if bodyinside.velocity != Vector2(0,0):
 			counter += 1
 			if counter >120:
-				rull = randi()%10+1
+				rull = randi()%4+1
 				print(rull)
 				counter = 0
 	
