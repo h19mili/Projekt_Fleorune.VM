@@ -2,11 +2,9 @@ extends YSort
 
 class_name TurnQ
 signal turn_done
-#signal Attack_done
 var party : Array = []
 var Etarget
-#onready var Battler_action = $Battler_Action #Combataction
-onready var active_player = Battler
+onready var active_player #= Battler
 onready var select_arrow = get_node("../Arrow")
 
 func _ready():
@@ -32,7 +30,7 @@ func play_turn():
 	if battler.Current_HP > 0:
 		battler.selected = true
 		var targets : Array = get_players()
-		if not targets:
+		if not battler.monster_member:
 			print("NO TARGETS!! END!")
 		battler.my_turn(targets)
 		yield(battler,"turn_done")
@@ -41,6 +39,13 @@ func play_turn():
 		var new_index : int = (active_player.get_index() + 1) % get_child_count()
 		active_player = get_child(new_index)
 		play_turn()
+	if battler.Current_HP < 0:
+		battler.selectable = false
+		battler.selected = false
+		var new_index : int = (active_player.get_index() + 1) % get_child_count()
+		active_player = get_child(new_index)
+		play_turn()
+
 
 #func _select_target(selectable_battlers : Array) -> Battler:
 	#var selected_target : Battler = select_arrow.select_target(selectable_battlers)#, "target_selected")

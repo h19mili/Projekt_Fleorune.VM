@@ -15,7 +15,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Input.is_action_just_pressed("ui_a"):
-		var rull = randi() % 3+1
+		var rull = 2#randi() % 3+1
 		for i in range(rull):
 			enemies.append("res://Enemy.tscn")
 		get_tree().get_root().add_child(scene)

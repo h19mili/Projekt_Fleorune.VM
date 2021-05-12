@@ -16,6 +16,7 @@
 [node name="Player" type="Node2D"]
 position = Vector2( 31.4688, 32.545 )
 script = ExtResource( 5 )
+Party_member = true
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 3 )
@@ -84,8 +85,10 @@ __meta__ = {
 script = ExtResource( 6 )
 
 [node name="Bars" type="VBoxContainer" parent="."]
-anchor_right = 1.0
-alignment = 1
+margin_left = -106.0
+margin_top = 31.9351
+margin_right = -33.0
+margin_bottom = 138.935
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -102,10 +105,10 @@ __meta__ = {
 }
 
 [node name="Attack" type="Button" parent="."]
-margin_left = -103.496
-margin_top = -31.3952
-margin_right = -32.4957
-margin_bottom = -11.3952
+margin_left = -106.0
+margin_top = -31.0
+margin_right = -32.0
+margin_bottom = -11.0
 text = "Basic Atk"
 __meta__ = {
 "_edit_use_anchors_": false

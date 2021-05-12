@@ -8,8 +8,9 @@ signal target_selected
 var selected : bool = false setget set_selected
 var selectable : bool = false setget set_selectable
 export var Party_member = false
+export var monster_member = false
 onready var target_global_position = self.global_position
-onready var bars = $Bars
+
 
 var Max_HP : int
 var Current_HP : int
@@ -72,10 +73,6 @@ func Attack():
 			emit_signal("Attack_done")
 			print("Enemy Attack")
 
-
-func Boxlista():
-	bars
-	pass
 
 
 

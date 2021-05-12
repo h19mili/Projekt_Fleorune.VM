@@ -28,3 +28,6 @@ func _process(delta):
 	if Input.is_action_just_pressed("ui_accept"):
 		gain_experience(100)
 	pass
+
+func Gain_EXP():
+	gain_experience(100)
