@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://Jobs/knight.tres" type="Resource" id=1]
+[ext_resource path="res://Jobs/snabbrackare.tres" type="Resource" id=1]
 [ext_resource path="res://Art/bar(2).png" type="Texture" id=2]
 [ext_resource path="res://Assets/Graphical/icon.png" type="Texture" id=3]
 [ext_resource path="res://Art/bar(1).png" type="Texture" id=4]
