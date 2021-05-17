@@ -10,6 +10,8 @@ func _ready():
 
 
 func _process(delta):
+	if Current_HP < 0:
+		queue_free()
 	pass
 
 

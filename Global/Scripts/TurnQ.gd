@@ -35,7 +35,7 @@ func play_turn():
 				active_monster += 1
 		if not active_monster:
 			print("Battle End You Win")
-			yield(get_tree().create_timer(3.0), "timeout")
+			yield(get_tree().create_timer(1.0), "timeout")
 			get_tree().change_scene("res://Scenes/World/Overworld.tscn")
 		battler.my_turn(targets)
 		yield(battler,"turn_done")
@@ -44,10 +44,11 @@ func play_turn():
 		var new_index : int = (active_player.get_index() + 1) % get_child_count()
 		active_player = get_child(new_index)
 		play_turn()
-		if battler.Current_HP < 0:
-			#battler.selectable = false
-			#battler.selected = false
-			play_turn()
+	if battler.Current_HP < 0:
+		_next_battler()
+		battler.selectable = false
+		battler.selected = false
+		play_turn()
 
 
 static func sort_players(a : Battler, b : Battler) -> bool:
