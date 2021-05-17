@@ -1,20 +1,21 @@
 extends Battler
 class_name Enemy
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+signal EXP
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
+	monster_member = true
 	STR = 5
-	pass # Replace with function body.
+	pass
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _process(delta):
+	if Current_HP < 0:
+		queue_free()
+	pass
+
+
+
 func my_turn(targets):
 	print("SPEED ENEMY")
 	print(Speed)
@@ -25,7 +26,10 @@ func my_turn(targets):
 		yield(get_tree().create_timer(1.0), "timeout")
 		Etarget.Current_HP -= CURRENT_DMG
 		emit_signal("turn_done")
-	else:
+	if Current_HP < 0:
+		#emit_signal("EXP")
+		yield(get_tree().create_timer(0.3), "timeout")
+		queue_free()
 		print("ENEMY NO HP")
 	return self
 
