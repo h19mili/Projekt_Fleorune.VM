@@ -1,6 +1,7 @@
 extends Battler
 class_name Enemy
 signal EXP
+onready var turnq : TurnQ
 
 
 func _ready():
@@ -10,10 +11,13 @@ func _ready():
 
 
 func _process(delta):
-	if Current_HP < 0:
-		queue_free()
+	Monster_alive()
 	pass
 
+func Monster_alive():
+	yield(get_tree().create_timer(3.0), "timeout")
+	if Current_HP < 0:
+		queue_free()
 
 
 func my_turn(targets):

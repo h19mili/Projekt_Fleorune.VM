@@ -25,18 +25,12 @@ func initialize():
 	play_turn()
 
 func play_turn():
+	Combat_Done()
 	var battler : Battler = active_player
 	var active_monster = 0
 	if battler.Current_HP > 0:
 		battler.selected = true
 		var targets : Array = get_players()
-		for M in targets:
-			if M.monster_member == true:
-				active_monster += 1
-		if not active_monster:
-			print("Battle End You Win")
-			yield(get_tree().create_timer(1.0), "timeout")
-			get_tree().change_scene("res://Scenes/World/Overworld.tscn")
 		battler.my_turn(targets)
 		yield(battler,"turn_done")
 		battler.selected = false
@@ -64,6 +58,16 @@ func get_active_player():
 func get_players():
 	return get_children()
 
-func _Done():
-	emit_signal("turn_done")
-	pass 
+func Combat_Done():
+	var active_monster = 0
+	var targets : Array = get_players()
+	for M in targets:
+		if M.monster_member == true:
+			active_monster += 1
+			print("active_monster")
+			print(active_monster)
+	if not active_monster:
+		print("Battle End You Win")
+		yield(get_tree().create_timer(1.0), "timeout")
+		get_tree().change_scene("res://Scenes/World/Overworld.tscn")
+

@@ -34,7 +34,6 @@ func my_turn(targets):
 		if not targets:
 			print("End")
 		Etarget = yield(select_arrow.select_target(targets),"completed")
-		#emit_signal("turn_done")
 	return self
 
 
