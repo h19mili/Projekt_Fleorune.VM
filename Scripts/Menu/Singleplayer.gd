@@ -8,7 +8,7 @@ func _ready():
 
 
 func New_Game():
-	get_tree().change_scene("res://Scenes/Menu/HUD.tscn")
+	get_tree().change_scene("res://Scenes/World/Overworld.tscn")
 	pass
 
 
