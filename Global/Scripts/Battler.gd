@@ -26,7 +26,6 @@ func _ready():
 	init(Max_HP, Current_HP)
 	selectable = true
 
-
 func set_selected(value):
 	selected = value
 
@@ -44,7 +43,6 @@ func Healthbar(value):
 	self.Max_HP = Max_HP * 1.0
 	self.Current_HP = clamp((Current_HP - value), 0, Max_HP)
 	update()
-	#Current_HP < 0
 
 func update():
 	var percentage = Current_HP / Max_HP
@@ -64,7 +62,6 @@ func Attack():
 	if Party_member == false:
 		if selected == true:
 			CURRENT_DMG = get_node("Battler_Action").Attack_action()
-			#emit_signal("emattack")
 			emit_signal("Attack_done")
 			print("Enemy Attack")
 

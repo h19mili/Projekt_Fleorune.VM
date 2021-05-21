@@ -11,6 +11,7 @@ onready var active_target : Battler
 
 
 func _ready():
+	hide()
 	pass
 
 

@@ -5,14 +5,11 @@ var scene = preload("Main.tscn").instance()
 var enemies : Array = []
 
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	randomize()
 	pass
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Input.is_action_just_pressed("ui_a"):
 		var rull = randi() % 3+1
