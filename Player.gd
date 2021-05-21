@@ -69,6 +69,7 @@ func Show_button():
 		get_node("Fireball").show()
 		get_node("Attack").show()
 		get_node("Heal").show()
+		get_node("../../Arrow").show()
 
 
 func Heal_pressed():

@@ -6,13 +6,14 @@ onready var turnq : TurnQ
 
 func _ready():
 	monster_member = true
-	STR = 5
+	#STR = 5
 	pass
 
 
 func _process(delta):
 	Monster_alive()
 	pass
+
 
 func Monster_alive():
 	yield(get_tree().create_timer(3.0), "timeout")
@@ -25,13 +26,11 @@ func my_turn(targets):
 	print(Speed)
 	if Current_HP > 0:
 		var Etarget : Battler = choose_target(targets)
-		#yield(active_player, "emattack") # a
 		Attack()
 		yield(get_tree().create_timer(1.0), "timeout")
 		Etarget.Current_HP -= CURRENT_DMG
 		emit_signal("turn_done")
 	if Current_HP < 0:
-		#emit_signal("EXP")
 		yield(get_tree().create_timer(0.3), "timeout")
 		queue_free()
 		print("ENEMY NO HP")
