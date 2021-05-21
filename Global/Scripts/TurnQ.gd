@@ -14,6 +14,10 @@ func _ready():
 func _process(delta):
 	var targets : Array = get_players()
 	var active_monster = 0
+	var active_Hero = 0
+	for H in targets:
+		if H.Party_member == true:
+			active_Hero += 1
 	for M in targets:
 		if M.monster_member == true:
 			active_monster += 1
@@ -22,13 +26,16 @@ func _process(delta):
 		#yield(get_tree().create_timer(1.0), "timeout")
 		get_tree().change_scene("res://Scenes/World/Overworld.tscn")
 		get_node("..").queue_free()
+	if active_Hero == 0:
+		print("Battle End You Lose")
+		#yield(get_tree().create_timer(1.0), "timeout")
+		get_tree().change_scene("res://Scenes/World/Overworld.tscn")
+		get_node("..").queue_free()
+
 
 func initialize():
 	Etarget = get_child(1)
 	var Battlers = get_players()
-	#for i in Battlers:
-		#if i.Party_member == true:
-			#party.append(i)
 	Battlers.sort_custom(self, 'sort_players')
 	Battlers[0].raise()
 	active_player = get_child(0)
@@ -50,9 +57,9 @@ func play_turn():
 		active_player = get_child(new_index)
 		play_turn()
 	if battler.Current_HP < 0:
-		_next_battler()
 		battler.selectable = false
 		battler.selected = false
+		_next_battler()
 		play_turn()
 
 
