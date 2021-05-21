@@ -51,12 +51,14 @@ func _input(event):
 		
 	var index = targets.find(active_target)
 	if event.is_action_pressed("ui_down"):
-		active_target = targets[(index + 1) % targets.size()]
-		_Move_to(active_target)
-		emit_signal("target_selected", active_target)
-		get_tree().set_input_as_handled()
+		if targets.size() > 1:
+			active_target = targets[(index + 1) % targets.size()]
+			_Move_to(active_target)
+			emit_signal("target_selected", active_target)
+			get_tree().set_input_as_handled()
 	if event.is_action_pressed("ui_up"):
-		active_target = targets[(index - 1 + targets.size()) % targets.size()]
-		_Move_to(active_target)
-		emit_signal("target_selected", active_target)
-		get_tree().set_input_as_handled()
+		if targets.size() > 1:
+			active_target = targets[(index - 1 + targets.size()) % targets.size()]
+			_Move_to(active_target)
+			emit_signal("target_selected", active_target)
+			get_tree().set_input_as_handled()

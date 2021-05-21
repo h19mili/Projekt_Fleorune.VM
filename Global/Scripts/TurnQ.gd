@@ -11,6 +11,17 @@ func _ready():
 	#Etarget = get_child(1)
 	#initialize()
 	pass
+func _process(delta):
+	var targets : Array = get_players()
+	var active_monster = 0
+	for M in targets:
+		if M.monster_member == true:
+			active_monster += 1
+	if active_monster < 1:
+		print("Battle End You Win")
+		#yield(get_tree().create_timer(1.0), "timeout")
+		get_tree().change_scene("res://Scenes/World/Overworld.tscn")
+		get_node("..").queue_free()
 
 func initialize():
 	Etarget = get_child(1)
