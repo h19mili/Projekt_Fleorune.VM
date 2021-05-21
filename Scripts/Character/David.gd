@@ -1,6 +1,7 @@
 extends KinematicBody2D
 	
 var Movement = 50
+var BodyInArea = 0
 	
 var velocity = Vector2()
 	

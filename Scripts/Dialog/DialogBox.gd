@@ -3,7 +3,7 @@ extends Control
 var json_parse = {}
 var json_file
 
-var conversation_id = "003"
+var conversation_id = "006"
 var dialog_index = 0
 var finished = false
 
@@ -33,7 +33,7 @@ func load_dialog():
 		)
 		$Tween.start()
 	else:
-		queue_free()
+		get_tree().change_scene("res://Scenes/World/Overworld.tscn")
 	dialog_index += 1
 	
 	

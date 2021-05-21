@@ -1,9 +1,13 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Assets/Graphical/Dialog/Message_02.png" type="Texture" id=1]
 [ext_resource path="res://Fonts/Dialog/AncientModernTales-a7Po.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Scripts/Dialog/DialogBox.gd" type="Script" id=3]
 [ext_resource path="res://Assets/Graphical/Dialog/Message_01.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Graphical/grass.jpg" type="Texture" id=5]
+[ext_resource path="res://Assets/Graphical/gatehouse.jpg" type="Texture" id=6]
+[ext_resource path="res://Assets/Graphical/MC_Sprite_ONE.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Graphical/Sprite_Guard_R.png" type="Texture" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 size = 40
@@ -16,9 +20,21 @@ font_data = ExtResource( 2 )
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 2.24512
+margin_right = 2.24512
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 962.085, 371.196 )
+scale = Vector2( 2.12496, 1.98777 )
+texture = ExtResource( 6 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 961.95, 914.807 )
+scale = Vector2( 1.19783, 0.440235 )
+texture = ExtResource( 5 )
 
 [node name="DialogBox" type="Control" parent="."]
 margin_right = 40.0
@@ -31,10 +47,10 @@ __meta__ = {
 [node name="Decal" type="TextureRect" parent="DialogBox"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 212.723
-margin_top = -280.059
-margin_right = 1396.72
-margin_bottom = 1023.94
+margin_left = 222.016
+margin_top = -273.216
+margin_right = 1406.01
+margin_bottom = 1030.78
 texture = ExtResource( 4 )
 expand = true
 __meta__ = {
@@ -86,3 +102,19 @@ __meta__ = {
 }
 
 [node name="Tween" type="Tween" parent="DialogBox"]
+
+[node name="Sprite4" type="Sprite" parent="."]
+position = Vector2( 1225.59, 706.219 )
+scale = Vector2( 1.6246, 1.5037 )
+texture = ExtResource( 7 )
+
+[node name="Sprite3" type="Sprite" parent="."]
+position = Vector2( 1116.48, 672.082 )
+scale = Vector2( 1.36843, 1.44753 )
+texture = ExtResource( 8 )
+
+[node name="Sprite5" type="Sprite" parent="."]
+position = Vector2( 1205.3, 669.247 )
+scale = Vector2( 1.2503, 1.30972 )
+texture = ExtResource( 8 )
+flip_h = true

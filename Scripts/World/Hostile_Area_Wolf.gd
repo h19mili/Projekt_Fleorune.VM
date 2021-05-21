@@ -8,7 +8,6 @@ var enemies : Array = []
 func _process(delta):
 	if rull == 1:
 		Global.playerpos=Spelare.position
-		#get_tree().change_scene("res://Scenes/Enemies/Bandit.tscn")
 		var NoOfEnemies = randi() % 3+1
 		for i in range(NoOfEnemies):
 			enemies.append("res://Scenes/Enemies/Wolf.tscn")

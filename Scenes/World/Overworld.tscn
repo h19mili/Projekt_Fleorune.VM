@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Assets/Graphical/tileset_overworld.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Graphical/tileset_mountains.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Scenes/Character/David.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Graphical/Road_gravel.png" type="Texture" id=7]
 [ext_resource path="res://Scripts/World/Camera.gd" type="Script" id=8]
+[ext_resource path="res://Scenes/World/SPEAKER.tscn" type="PackedScene" id=9]
 
 [sub_resource type="TileSet" id=1]
 0/name = "tileset_overworld.png 0"
@@ -1948,13 +1949,16 @@ position = Vector2( 15.7237, 54.2387 )
 polygon = PoolVector2Array( 48.3878, 2.22107, 48.8994, -125.665, 27.1576, -161.329, 15.903, -159.168, 1.83478, -138.274, -30.65, -138.634, -45.4856, -115.938, -72.8547, -117.379, -84.1093, -128.907, -97.3942, -113.748, -113.78, -113.057, -126.57, -92.883, -128.872, -66.225, -113.269, -48.2129, -80.5283, -43.5297, -65.9485, -24.7971, -47.2761, -20.114, -24.5112, -2.4621, -0.978882, 0.419861, 22.5534, 11.2271 )
 
 [node name="David" parent="." instance=ExtResource( 6 )]
-position = Vector2( 673.359, 470.113 )
+position = Vector2( 675.497, 469.795 )
 z_index = 1
 
 [node name="Camera2D" type="Camera2D" parent="David"]
 visible = false
 current = true
 zoom = Vector2( 0.3, 0.3 )
+
+[node name="Node2D" parent="." instance=ExtResource( 9 )]
+position = Vector2( 453.478, 75.6634 )
 
 [node name="CollisionBoxes" type="Node" parent="."]
 
@@ -1989,6 +1993,7 @@ polygon = PoolVector2Array( 376.386, 607.477, 376.916, 560.595, 390.954, 546.557
 polygon = PoolVector2Array( 355.75, 600, 319.25, 572.25, 271.75, 572.25, 257, 587.75, 220.5, 587.5, 193.25, 559.25, 176.25, 525.25, 159, 525, 129.75, 555.5, 111.25, 555.75, 107.75, 578, 96.25, 587.5, 60.25, 587.25, 48.75, 575.25, 48.75, 555, 58.5, 545.75, 58, 535.5, 31.25, 513, 31.75, 480.75, 15.75, 465, 15.75, 458.75, 47.75, 429.5, 49.25, 385.5, 15.5, 353, 17.75, 335.5, 12.25, 324, 15, 306.5, 30.75, 304.5, 50.25, 283.75, 54.25, 260.5, 94.25, 257.25, 116.75, 258.5, 116, 244.5, 74.5, 200.75, 45.75, 185.5, 1.25, 172, 1.25, 607, 355.75, 607 )
 
 [node name="CollisionPolygon2D10" type="CollisionPolygon2D" parent="CollisionBoxes/StaticBody2D"]
+position = Vector2( -1.58917, 1.5892 )
 polygon = PoolVector2Array( 456.208, 361.376, 448.429, 225.258, 490.502, 166.922, 534.696, 169.397, 545.303, 176.822, 568.284, 186.014, 585.254, 199.803, 616.338, 206.393, 625.258, 245.637, 611.284, 281.016, 590.205, 297.383, 572.527, 299.858, 568.991, 341.224, 541.414, 345.82, 526.211, 363.144 )
 
 [node name="CollisionPolygon2D11" type="CollisionPolygon2D" parent="CollisionBoxes/StaticBody2D"]
